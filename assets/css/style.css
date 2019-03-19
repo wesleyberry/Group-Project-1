@@ -1,12 +1,13 @@
 .titlePageBackground {
     z-index: 1;
+    height: auto;
+    width: auto;
 }
 .titleImage {
     position: static;
-    z-index: 3 !important;
+    z-index: 2 !important;
     margin-left: 30%;
     margin-top: -50%;
-    margin-bottom: auto;
 }
 .forDivThree,
 .forDivTwo,
