@@ -4,73 +4,84 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.5.3/css/foundation-float.css">
+    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <title>Mixology Must</title>
 </head>
 <body>
-    <ul class="vertical medium-horizontal menu">
-        <li><a href="#">Words</a></li>
-        <li><a href="#">Another Word</a></li>
-        <li><a href="#">Final Words</a></li>
-    </ul>
-    <!-- Container 1 - For search bars and buttons-->
-    <div class="grid-y small-12 medium-12 large-6">
-
-        <div class="grid-x">
-            <div class="cell">
-                <div class="top-bar-center">
-                    <ul class="menu">
-                        <h3>Search by Drink: </h3><br>
-                        <li><input type="search" placeholder="Drink Name"></li>
-                        <li><button type="button" class="button"
-                            id="buttonSearchDrink">Search</button></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="grid-x">
-            <div class="cell">
-                <div class="top-bar-center">
-                    <ul class="menu">
-                        <h3>Search by Ingredient: </h3><br>
-                        <li><input type="search" placeholder="Ex: Whiskey, bitters, sugar, water"></li>
-                        <li><button type="button" class="button"
-                            id="buttonSearchIngredient">Search</button></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <br>
-        <div class="grid-x">
-            <div class="cell">
-                <div class="top-bar-center">
-                    <ul class="menu">
-                        <h3>Add Ingredient to List: </h3><br>
-                        <li><input type="search" placeholder="Sweet and Sour"></li>
-                        <li><button type="button" class="button"
-                            id="buttonAddIngredient">Add Ingredient</button></li>
-                    </ul>
-                </div>
+    <div class="grid-container full">
+        <div class="titlePageBackground">
+            <img src="assets/images/photo3.jpg" alt="LandingPhoto">
+            <div class="titleImage">
+                <a href="index.html" target="_blank"><img src="assets/images/image.png" alt="MixologyMust"></a>
             </div>
         </div>
     </div>
-    
-    <!-- Container 2 - for displaying ingredients-->
-    <div class="grid-y small-12 medium-12 large-6">
-        <h2>Some Words</h2>
+    <div class="grid-container">
+    <!-- Container 1 - For search bars and buttons-->
+    <div class="row">
+        <div class="small-12 medium-6 large-6 column forDivOne">
+            <div class="grid-x">
+                <div class="cell">
+                    <div class="top-bar-center">
+                        <ul class="menu">
+                            <h3>Search by Drink: </h3><br>
+                            <li><input type="search" placeholder="Drink Name"></li>
+                            <li><button type="button" class="button"
+                                id="buttonSearchDrink">Search</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="grid-x">
+                <div class="cell">
+                    <div class="top-bar-center">
+                        <ul class="menu">
+                            <h3>Search by Ingredient: </h3><br>
+                            <li><input type="search" placeholder="Ex: Whiskey, bitters, sugar, water"></li>
+                            <li><button type="button" class="button"
+                                id="buttonSearchIngredient">Search</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br>
+            <div class="grid-x">
+                <div class="cell">
+                    <div class="top-bar-center">
+                        <ul class="menu">
+                            <h3>Add Ingredient to List: </h3><br>
+                            <li><input type="search" placeholder="Sweet and Sour"></li>
+                            <li><button type="button" class="button"
+                                id="buttonAddIngredient">Add Ingredient</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <br>
+        </div>
+        <!-- Container 2 - for displaying ingredients-->
+        <div class="small-12 medium-6 large-6 column forDivTwo">
+            <h3>Ingredients List: </h3>
+            <div>
+                <ul>
+                    <li>Vodka</li>
+                    <li>Bloody Mary Mix</li>
+                    <li>Celery</li>
+                </ul>
+            </div>
+        </div>
     </div>
     <!-- Container 3 - for displaying cards -->
-    <div class="grid-container">
-        <div class="grid-x grid-padding-x small-up-2 medium-up-2 large-up-4">
-            <div class="cell">
-                <div class="card" style="width: 300px;">
+        <div class="row forDivThree">
+            <div class="small-6 medium-3 large-3 columns">
+                <div class="card">
                     <div class="card-divider">
                         <h3 id="name">Margarita</h3>
                     </div>
                     <div class="card-section" id="photo">
-                        <img src="https://cdn.liquor.com/wp-content/uploads/2017/07/05150949/Frozen-Margarita-720x720-recipe.jpg">
+                        <img src="http://chittagongit.com//images/small-icon-images/small-icon-images-11.jpg">
                     </div>
                     <div class="card-section">
                         <div id="ingredients">
@@ -99,13 +110,83 @@
                     </div>
                 </div>
             </div>
-            <div class="cell">
-                <div class="card" style="width: 300px;">
+            <div class="small-6 medium-3 large-3 columns">
+                <div class="card">
                     <div class="card-divider">
                         <h3 id="name">Margarita</h3>
                     </div>
                     <div class="card-section" id="photo">
-                        <img src="https://cdn.liquor.com/wp-content/uploads/2017/07/05150949/Frozen-Margarita-720x720-recipe.jpg">
+                        <img src="http://chittagongit.com//images/small-icon-images/small-icon-images-11.jpg">
+                    </div>
+                    <div class="card-section">
+                        <div id="ingredients">
+                            <h4>Ingredients:</h4>
+                            <ul>
+                                <li id="ingredient-1"><span id="measurement-1">2 oz</span> Blanco Tequila</li>
+                                <li id="ingredient-2"><span id="measurement-2">1 oz</span> Fresh Lime Juice</li>
+                                <li id="ingredient-3"><span id="measurement-3">3/4</span> oz Orange Liqueur</li>
+                                <li id="ingredient-4"><span id="measurement-4"></span></li>
+                                <li id="ingredient-5"><span id="measurement-5"></span></li>
+                                <li id="ingredient-6"><span id="measurement-6"></span></li>
+                                <li id="ingredient-7"><span id="measurement-7"></span></li>
+                            </ul>
+                        </div>
+                        <div id="instructions">
+                            <h4>Instructions: </h4>
+                            <ol>
+                                <li>Salt the rim of the glass</li>
+                                <li>Add lime to rim as garnish</li>
+                                <li>Serve on ice</li>
+                            </ol>
+                        </div>
+                        <div id="nutrition">
+                            <h4>Nutritional Facts:</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="small-6 medium-3 large-3 columns">
+                <div class="card">
+                    <div class="card-divider">
+                        <h3 id="name">Margarita</h3>
+                    </div>
+                    <div class="card-section" id="photo">
+                        <img src="http://chittagongit.com//images/small-icon-images/small-icon-images-11.jpg">
+                    </div>
+                    <div class="card-section">
+                        <div id="ingredients">
+                            <h4>Ingredients:</h4>
+                            <ul>
+                                <li id="ingredient-1"><span id="measurement-1">2 oz</span> Blanco Tequila</li>
+                                <li id="ingredient-2"><span id="measurement-2">1 oz</span> Fresh Lime Juice</li>
+                                <li id="ingredient-3"><span id="measurement-3">3/4</span> oz Orange Liqueur</li>
+                                <li id="ingredient-4"><span id="measurement-4"></span></li>
+                                <li id="ingredient-5"><span id="measurement-5"></span></li>
+                                <li id="ingredient-6"><span id="measurement-6"></span></li>
+                                <li id="ingredient-7"><span id="measurement-7"></span></li>
+                            </ul>
+                        </div>
+                        <div id="instructions">
+                            <h4>Instructions: </h4>
+                            <ol>
+                                <li>Salt the rim of the glass</li>
+                                <li>Add lime to rim as garnish</li>
+                                <li>Serve on ice</li>
+                            </ol>
+                        </div>
+                        <div id="nutrition">
+                            <h4>Nutritional Facts:</h4>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="small-6 medium-3 large-3 columns">
+                <div class="card">
+                    <div class="card-divider">
+                        <h3 id="name">Margarita</h3>
+                    </div>
+                    <div class="card-section" id="photo">
+                        <img src="http://chittagongit.com//images/small-icon-images/small-icon-images-11.jpg">
                     </div>
                     <div class="card-section">
                         <div id="ingredients">
@@ -136,6 +217,7 @@
             </div>
         </div>
     </div>
+
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 </html>
