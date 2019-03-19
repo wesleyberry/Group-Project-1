@@ -1,0 +1,19 @@
+.titlePageBackground {
+    z-index: 1;
+    height: auto;
+    width: auto;
+}
+.titleImage {
+    position: static;
+    z-index: 2 !important;
+    margin-left: 30%;
+    margin-top: -50%;
+}
+.forDivThree,
+.forDivTwo,
+.forDivOne {
+    border-style: solid;
+    border-width: 4px;
+    border-color: #2B3884;
+    border-radius: 8px;
+}
