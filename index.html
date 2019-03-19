@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
-
     <link rel="stylesheet" type="text/css" href="assets/css/foundation.css">
     <link rel="stylesheet" type="text/css" href="assets/css/app.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -18,47 +18,25 @@
 
 <body>
     <div class="titlePageBackground">
-        <a href="index.html" target="_blank"><img src="assets/images/image.png" alt="MixologyMust"></a>
+        <!-- <a href="index.html" target="_blank"><img src="assets/images/image.png" alt="MixologyMust"></a> -->
     </div>
-    <div class="row">
         <!-- Container 1 - For search bars and buttons-->
         <div class="row">
             <div class="small-12 medium-6 large-6 column forDivOne">
-                <div class="grid-x">
-                    <div class="cell">
-                        <div class="top-bar-center">
-                            <ul class="menu">
-                                <h3>Search by Drink: </h3><br>
-                                <li><input type="search" placeholder="Drink Name"></li>
-                                <li><button type="button" class="button" id="buttonSearchDrink">Search</button></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <h3>Search by Drink: </h3>
                 <br>
-                <div class="grid-x">
-                    <div class="cell">
-                        <div class="top-bar-center">
-                            <ul class="menu">
-                                <h3>Search by Ingredient: </h3><br>
-                                <li><input type="search" placeholder="Ex: Whiskey, bitters, sugar, water"></li>
-                                <li><button type="button" class="button" id="buttonSearchIngredient">Search</button></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <input type="search" placeholder="Drink Name" id="search-drink">
+                <button type="button" class="button" id="buttonSearchDrink">Search</button>
                 <br>
-                <div class="grid-x">
-                    <div class="cell">
-                        <div class="top-bar-center">
-                            <ul class="menu">
-                                <h3>Add Ingredient to List: </h3><br>
-                                <li><input type="search" placeholder="Sweet and Sour"></li>
-                                <li><button type="button" class="button" id="buttonAddIngredient">Add Ingredient</button></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <h3>Search by Ingredient: </h3>
+                <br>
+                <input type="search" placeholder="Ex: Whiskey, bitters, sugar, water" id="search-ingredient">
+                <button type="button" class="button" id="buttonSearchIngredient">Search</button>
+                <br>
+                <h3>Add Ingredient to List: </h3>
+                <br>
+                <input type="search" placeholder="Sweet and Sour">
+                <button type="button" class="button" id="buttonAddIngredient">Add Ingredient</button>
                 <br>
             </div>
             <!-- Container 2 - for displaying ingredients-->
