@@ -1,5 +1,18 @@
 $(document).ready(function () {
 
+    function makeDrinkCards(drinkResults) {
+                
+        for (var i = 0; i < drinkResults.length; i++) {
+            var drinkCard = $("<div>");
+            var drinkName = $("<h3>").text(drinkResults[i].strDrink);
+            var drinkImg = drinkResults[i].strDrinkThumb;
+            
+            drinkCard.append(drinkName);
+            drinkCard.append(drinkImg);
+            $(".grid-container").append(drinkCard);
+            
+        }
+    }
 
     $("#buttonSearchDrink").on("click", function (event) {
         event.preventDefault();
@@ -13,9 +26,10 @@ $(document).ready(function () {
             .then(function (response) {
                 var drinkResults = response;
                 console.log(drinkResults);
-            })
-        
-    });
+                makeDrinkCards(drinkResults.drinks);
+            });
+
+        });
 
     $("#buttonSearchIngredient").on("click", function (event) {
         event.preventDefault();
@@ -29,14 +43,10 @@ $(document).ready(function () {
             .then(function (response) {
                 var ingredientResults = response;
                 console.log(ingredientResults);
+
             })
-        
+
     });
 
-    function makeDrinkCards() {
-        var drinkName = drinkResults.strDrink;
-        var photo = drinkResults.strDrinkThumb;
-        
 
-    }
 })
