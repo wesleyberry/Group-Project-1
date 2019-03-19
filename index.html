@@ -5,9 +5,9 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
-
     <link rel="stylesheet" type="text/css" href="assets/css/foundation.css">
     <link rel="stylesheet" type="text/css" href="assets/css/app.css">
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
@@ -17,71 +17,26 @@
 </head>
 
 <body>
-<<<<<<< HEAD
     <div class="titlePageBackground">
-        <a href="index.html" target="_blank"><img src="assets/images/image.png" alt="MixologyMust"></a>
+        <!-- <a href="index.html" target="_blank"><img src="assets/images/image.png" alt="MixologyMust"></a> -->
     </div>
-    <div class="row">
         <!-- Container 1 - For search bars and buttons-->
         <div class="row">
             <div class="small-12 medium-6 large-6 column forDivOne">
-                <div class="grid-x">
-                    <div class="cell">
-                        <div class="top-bar-center">
-                            <ul class="menu">
-                                <h3>Search by Drink: </h3><br>
-                                <li><input type="search" placeholder="Drink Name"></li>
-                                <li><button type="button" class="button" id="buttonSearchDrink">Search</button></li>
-                            </ul>
-                        </div>
-=======
-    <div class="expanded row">
-        <div class="titlePageBackground">
-            <img src="assets/images/photo3.jpg" alt="LandingPhoto">
-            <div class="titleImage">
-                <a href="index.html" target="_blank"><img src="assets/images/image.png" alt="MixologyMust"></a>
-            </div>
-        </div>
-    </div>
-    <!-- Container 1 - For search bars and buttons-->
-    <div class="row">
-        <div class="small-12 medium-6 large-6 column forDivOne">
-            <div class="grid-x">
-                <div class="cell">
-                    <div class="top-bar-center">
-                        <ul class="menu">
-                            <h3>Search by Drink: </h3><br>
-                            <li><input type="search" placeholder="Drink Name"></li>
-                            <li><button type="button" class="button"
-                                id="buttonSearchDrink">Search</button></li>
-                        </ul>
->>>>>>> master
-                    </div>
-                </div>
+                <h3>Search by Drink: </h3>
                 <br>
-                <div class="grid-x">
-                    <div class="cell">
-                        <div class="top-bar-center">
-                            <ul class="menu">
-                                <h3>Search by Ingredient: </h3><br>
-                                <li><input type="search" placeholder="Ex: Whiskey, bitters, sugar, water"></li>
-                                <li><button type="button" class="button" id="buttonSearchIngredient">Search</button></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <input type="search" placeholder="Drink Name" id="search-drink">
+                <button type="button" class="button" id="buttonSearchDrink">Search</button>
                 <br>
-                <div class="grid-x">
-                    <div class="cell">
-                        <div class="top-bar-center">
-                            <ul class="menu">
-                                <h3>Add Ingredient to List: </h3><br>
-                                <li><input type="search" placeholder="Sweet and Sour"></li>
-                                <li><button type="button" class="button" id="buttonAddIngredient">Add Ingredient</button></li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
+                <h3>Search by Ingredient: </h3>
+                <br>
+                <input type="search" placeholder="Ex: Whiskey, bitters, sugar, water" id="search-ingredient">
+                <button type="button" class="button" id="buttonSearchIngredient">Search</button>
+                <br>
+                <h3>Add Ingredient to List: </h3>
+                <br>
+                <input type="search" placeholder="Sweet and Sour">
+                <button type="button" class="button" id="buttonAddIngredient">Add Ingredient</button>
                 <br>
             </div>
             <!-- Container 2 - for displaying ingredients-->
@@ -119,8 +74,8 @@
                                 <li id="ingredient-7"><span id="measurement-7"></span></li>
                             </ul>
                         </div>
-                        <button class="button" type="button" data-toggle="example-dropdown-top-center">Instructions</button>
-                        <div class="dropdown-pane" data-position="top" data-alignment="center" id="example-dropdown-top-center" data-dropdown data-auto-focus="true">
+                        <button class="button" type="button" data-toggle="example-dropdown-top-center1">Instructions</button>
+                        <div class="dropdown-pane" data-position="top" data-alignment="center" id="example-dropdown-top-center1" data-dropdown data-auto-focus="true">
                         <!-- My dropdown content in here -->
                             <div id="instructions">
                                 <ol>
@@ -130,8 +85,8 @@
                                 </ol>
                             </div>
                         </div>
-                        <button class="button" type="button" data-toggle="example-dropdown-bottom-center">Nutritional Facts</button>
-                        <div class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-center" data-dropdown data-auto-focus="true">
+                        <button class="button" type="button" data-toggle="example-dropdown-bottom-center1">Nutritional Facts</button>
+                        <div class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-center1" data-dropdown data-auto-focus="true">
                             <!-- My dropdown content in here -->
                             <div id="nutrition">
                                 Nutritional Facts:
@@ -161,16 +116,107 @@
                                 <li id="ingredient-7"><span id="measurement-7"></span></li>
                             </ul>
                         </div>
-                        <div id="instructions">
-                            <h4>Instructions: </h4>
-                            <ol>
-                                <li>Salt the rim of the glass</li>
-                                <li>Add lime to rim as garnish</li>
-                                <li>Serve on ice</li>
-                            </ol>
+                        <button class="button" type="button" data-toggle="example-dropdown-top-center2">Instructions</button>
+                        <div class="dropdown-pane" data-position="top" data-alignment="center" id="example-dropdown-top-center2" data-dropdown data-auto-focus="true">
+                        <!-- My dropdown content in here -->
+                            <div id="instructions">
+                                <ol>
+                                    <li>Salt the rim of the glass</li>
+                                    <li>Add lime to rim as garnish</li>
+                                    <li>Serve on ice</li>
+                                </ol>
+                            </div>
                         </div>
-                        <div id="nutrition">
-                            <h4>Nutritional Facts:</h4>
+                        <button class="button" type="button" data-toggle="example-dropdown-bottom-center2">Nutritional Facts</button>
+                        <div class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-center2" data-dropdown data-auto-focus="true">
+                            <!-- My dropdown content in here -->
+                            <div id="nutrition">
+                                Nutritional Facts:
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="small-6 medium-3 large-3 columns">
+                <div class="card">
+                    <div class="card-divider">
+                        <h3 id="name">Margarita</h3>
+                    </div>
+                    <div class="card-section" id="photo">
+                        <img src="http://chittagongit.com//images/small-icon-images/small-icon-images-11.jpg">
+                    </div>
+                    <div class="card-section">
+                        <div id="ingredients">
+                            <h4>Ingredients:</h4>
+                            <ul>
+                                <li id="ingredient-1"><span id="measurement-1">2 oz</span> Blanco Tequila</li>
+                                <li id="ingredient-2"><span id="measurement-2">1 oz</span> Fresh Lime Juice</li>
+                                <li id="ingredient-3"><span id="measurement-3">3/4</span> oz Orange Liqueur</li>
+                                <li id="ingredient-4"><span id="measurement-4"></span></li>
+                                <li id="ingredient-5"><span id="measurement-5"></span></li>
+                                <li id="ingredient-6"><span id="measurement-6"></span></li>
+                                <li id="ingredient-7"><span id="measurement-7"></span></li>
+                            </ul>
+                        </div>
+                        <button class="button" type="button" data-toggle="example-dropdown-top-center3">Instructions</button>
+                        <div class="dropdown-pane" data-position="top" data-alignment="center" id="example-dropdown-top-center3" data-dropdown data-auto-focus="true">
+                        <!-- My dropdown content in here -->
+                            <div id="instructions">
+                                <ol>
+                                    <li>Salt the rim of the glass</li>
+                                    <li>Add lime to rim as garnish</li>
+                                    <li>Serve on ice</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <button class="button" type="button" data-toggle="example-dropdown-bottom-center3">Nutritional Facts</button>
+                        <div class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-center3" data-dropdown data-auto-focus="true">
+                            <!-- My dropdown content in here -->
+                            <div id="nutrition">
+                                Nutritional Facts:
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="small-6 medium-3 large-3 columns">
+                <div class="card">
+                    <div class="card-divider">
+                        <h3 id="name">Margarita</h3>
+                    </div>
+                    <div class="card-section" id="photo">
+                        <img src="http://chittagongit.com//images/small-icon-images/small-icon-images-11.jpg">
+                    </div>
+                    <div class="card-section">
+                        <div id="ingredients">
+                            <h4>Ingredients:</h4>
+                            <ul>
+                                <li id="ingredient-1"><span id="measurement-1">2 oz</span> Blanco Tequila</li>
+                                <li id="ingredient-2"><span id="measurement-2">1 oz</span> Fresh Lime Juice</li>
+                                <li id="ingredient-3"><span id="measurement-3">3/4</span> oz Orange Liqueur</li>
+                                <li id="ingredient-4"><span id="measurement-4"></span></li>
+                                <li id="ingredient-5"><span id="measurement-5"></span></li>
+                                <li id="ingredient-6"><span id="measurement-6"></span></li>
+                                <li id="ingredient-7"><span id="measurement-7"></span></li>
+                            </ul>
+                        </div>
+                        <button class="button" type="button" data-toggle="example-dropdown-top-center4">Instructions</button>
+                        <div class="dropdown-pane" data-position="top" data-alignment="center" id="example-dropdown-top-center4" data-dropdown data-auto-focus="true">
+                        <!-- My dropdown content in here -->
+                            <div id="instructions">
+                                <ol>
+                                    <li>Salt the rim of the glass</li>
+                                    <li>Add lime to rim as garnish</li>
+                                    <li>Serve on ice</li>
+                                </ol>
+                            </div>
+                        </div>
+                        <button class="button" type="button" data-toggle="example-dropdown-bottom-center4">Nutritional Facts</button>
+                        <div class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-center4" data-dropdown data-auto-focus="true">
+                            <!-- My dropdown content in here -->
+                            <div id="nutrition">
+                                Nutritional Facts:
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -178,12 +224,17 @@
         </div>
     <!-- Container 4 - This will hold the map -->
     <div class="row">
-        <div class="small-12 medium-6 large-6 columns mapDiv">
+        <div class="small-12 medium-6 large-6 columns">
             <div class="row">
                 <h3>Find a Liquor Store Near You!</h3>
             </div>
-            <div class="row" id="putMapHere">
+            <div class="row">
+                <div class="small-12 medium-6 large-6 columns" id="putMapHere">
+                    
+                </div>
+                <div class="small-12 medium-6 large- columns" id="putTimerHere">
 
+                </div>
             </div>
         </div>
     </div>

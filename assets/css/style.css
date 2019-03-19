@@ -1,10 +1,20 @@
+body {
+    font-family: Pona,Georgia,Times,Serif;
+}
 .titlePageBackground {
-    height: 500px;
-    background: url("../images/photo3.jpg");
-    background-size: 100%;
+    /* height: 500px; */
+    background: url("../images/photo4.jpg");
+    background-size: cover;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: calc(100vh + 53px);
+    overflow-x:hidden;
+    background-position: center;
+    /* background-position: 50% 50%; */
 }
 .titleImage {
     position: static;
@@ -22,11 +32,33 @@
     border-color: #2B3884;
     border-radius: 8px;
 }
-<<<<<<< HEAD
 
 
-=======
-.mapDiv {
-    
+@media (min-width: 300px) {
+    .titlePageBackground {
+    background-position: 90% 50%;
+    }
 }
->>>>>>> master
+/* Small devices (landscape phones, 576px and up) */
+@media (min-width: 576px) {
+    .titlePageBackground {
+    background-position: 90% 50%;
+    }
+}
+
+ /* Medium devices (tablets, 768px and up) */
+@media (min-width: 768px) {
+
+}
+
+ /* Large devices (desktops, 992px and up) */
+@media (min-width: 992px) {
+    .titlePageBackground {
+    background-position: center;
+    }
+}
+
+ /* Extra large devices (large desktops, 1200px and up) */
+@media (min-width: 1200px) {
+
+}
