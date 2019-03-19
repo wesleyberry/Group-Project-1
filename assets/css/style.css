@@ -1,13 +1,17 @@
 .titlePageBackground {
-    z-index: 1;
-    height: auto;
-    width: auto;
+    height: 500px;
+    background: url("../images/photo3.jpg");
+    background-size: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 .titleImage {
     position: static;
     z-index: 2 !important;
     margin-left: 30%;
-    margin-top: -50%;
+    /* margin-top: -50%; */
+    
 }
 .forDivThree,
 .forDivTwo,
@@ -17,10 +21,4 @@
     border-width: 4px;
     border-color: #2B3884;
     border-radius: 8px;
-}
-.mapDiv {
-    
-}
-#putMapHere {
-
 }
