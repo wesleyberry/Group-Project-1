@@ -143,3 +143,9 @@ a {
         visibility: visible;
     }
 }
+
+/* Used to view the map */
+ #putMapHere {    
+    height: 300px;   
+    width: 100%;  
+  }
