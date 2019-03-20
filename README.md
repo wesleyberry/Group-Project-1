@@ -1,8 +1,8 @@
 # Mixology
 
-Mixology is a website/app to help individuals look for their perfect drink based off their favorite ingrediants.
+Mixology is a website/app to help individuals look for their perfect drink based off their favorite ingredients.
 
-How Mixology works is the user will type into the search bar for drinks or ingrediants and provides what kind of beverages contains certain ingrediants.
+How Mixology works is the user will type into the search bar for drinks or ingredients and provides what kind of beverages contains certain ingredients.
 
 
 This app was built with
