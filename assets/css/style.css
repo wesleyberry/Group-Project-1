@@ -3,9 +3,24 @@ body {
     background:rgba(00,00,00, 0);
    
 }
+<<<<<<< HEAD
 
 .titlePageBackground{
     background:rgba(00,00,00, 0);
+=======
+.titlePageBackground {
+    background: url("../images/photo4.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    height: calc(100vh + 20px);
+    overflow-x:hidden;
+    background-position: center;
+>>>>>>> master
 }
 
 .firstContainer {
@@ -16,15 +31,20 @@ body {
 .titleImage {
     position: static;
     z-index: 2 !important;
-    margin-left: 30%;
-    /* margin-top: -50%; */
-    
+    margin-left: 30%;  
 }
 .parallax1 {
+<<<<<<< HEAD
     background: url("../images/photo4.jpg");
     perspective: 1px;
     height: 100vh;
     overflow-y: auto;
+=======
+    background: url("../images/photo2.jpg");
+    z-index: 0;
+    position: relative;
+    height: 100%; 
+>>>>>>> master
     /* Create the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
@@ -47,21 +67,43 @@ body {
     align-items: center;
     background-repeat: no-repeat;
     width: 100vw;
-    /* height: calc(100vh + 20px); */
     overflow-x:hidden;
     background-position: center;
 }
 a {
     color: white !important;
 }
+.row {
+    z-index: 1;
+}
+.forNav {
+    width: 13vw;
+    z-index: 2 !important;
+}
 .forDivThree {
     margin-top: 1%;
     margin-bottom: 1%;
 }
-.forDivThree,
+#firstButtonNav,
+#secondButtonNav,
+#thirdButtonNav,
+#fourthButtonNav,
+#fifthButtonNav {
+    width: auto;
+    margin-right: auto;
+}
+.forDivThree {
+    border-style: solid;
+    border-width: 4px;
+    border-color: rgb(187, 81, 10);
+    border-radius: 8px;
+    background: rgba(211, 129, 52, 0.2);
+    padding-top:1%;
+}
 .forDivTwo,
 .forDivOne,
 .mapDiv {
+    z-index:2;
     border-style: solid;
     border-width: 4px;
     border-color: rgb(187, 81, 10);
