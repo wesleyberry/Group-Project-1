@@ -1,6 +1,7 @@
 body {
     font-family: Pona,Georgia,Times,Serif;
     background-color: rgb(83, 83, 83);
+    overflow-x: hidden;
 }
 .titlePageBackground {
     background: url("../images/photo4.jpg");
@@ -12,7 +13,7 @@ body {
     background-repeat: no-repeat;
     width: 100vw;
     height: calc(100vh + 20px);
-    overflow-x:hidden;
+    /* overflow-x: hidden; */
     background-position: center;
 }
 .titleImage {
@@ -44,7 +45,7 @@ body {
     align-items: center;
     background-repeat: no-repeat;
     width: 100vw;
-    overflow-x:hidden;
+    /* overflow-x: hidden; */
     background-position: center;
 }
 a {
