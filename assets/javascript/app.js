@@ -1,5 +1,4 @@
 $(document).ready(function () {
-
     function makeDrinkCards(drinkResults) {   
         for (var i = 0; i < drinkResults.length; i++) {
 
@@ -11,7 +10,6 @@ $(document).ready(function () {
             drinkCard.append(drinkName);
             var drinkImg = $("<img>").attr("src", drink.strDrinkThumb);
             drinkCard.append(drinkImg);
-<<<<<<< HEAD
 
             for (var ingIndex = 1; ingIndex <= 15; ingIndex++) {
                 var ingredientProperty = "strIngredient" + ingIndex;
@@ -83,11 +81,6 @@ $(document).ready(function () {
 
 
 
-=======
-            $(".grid-container").append(drinkCard);        
-        }
-    }
->>>>>>> master
     $("#buttonSearchDrink").on("click", function (event) {
         event.preventDefault();
         $(".row.forDivThree").empty();
@@ -101,15 +94,11 @@ $(document).ready(function () {
                 var drinkResults = response;
                 makeDrinkCards(drinkResults.drinks);
             });
-<<<<<<< HEAD
 
 
 
     });
 
-=======
-        });
->>>>>>> master
     $("#buttonSearchIngredient").on("click", function (event) {
     event.preventDefault();
     $(".grid-container").empty();
@@ -126,7 +115,6 @@ $(document).ready(function () {
     });
     $("#buttonAddIngredient").on("click", function(event) {
         event.preventDefault();
-<<<<<<< HEAD
         $(".row.forDivThree").empty();
         var ingredientQuery = $("#search-ingredient").val().trim();
         var queryIngredientURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredientQuery;
@@ -140,21 +128,5 @@ $(document).ready(function () {
             })
         
 
-=======
-        var ingredient = $("#add-ingredient").val().trim();
-        console.log(ingredient);
-        var newP = $("<p>");
-        $(newP).text(ingredient);
-        var newDivCallout = $("<div class=callout data-closable>");
-        // newDivCallout.addClass("callout");
-        newDivCallout.attr("data-closable");
-        var newButton = $("<button data-close>");
-        $(newButton).addClass("close-button");
-        $(newButton).attr("aria-label", "Close alert").attr("type", "button");
-        $(newButton).append("<span aria-hidden='true'>&times;</span>");
-        $(newDivCallout).append(newButton);
-        $(newDivCallout).append(newP);
-        $("#displayIngredients").append(newDivCallout);
->>>>>>> master
     });
 })
