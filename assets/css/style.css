@@ -3,11 +3,6 @@ body {
     background:rgba(00,00,00, 0);
    
 }
-<<<<<<< HEAD
-
-.titlePageBackground{
-    background:rgba(00,00,00, 0);
-=======
 .titlePageBackground {
     background: url("../images/photo4.jpg");
     background-size: cover;
@@ -20,7 +15,6 @@ body {
     height: calc(100vh + 20px);
     overflow-x:hidden;
     background-position: center;
->>>>>>> master
 }
 
 .firstContainer {
