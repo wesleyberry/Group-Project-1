@@ -40,8 +40,25 @@ body {
     padding-right: .5rem;
     padding-left: .5rem;
 }
+.behindCards {
+    background: url("../images/photo5.jpg");
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-repeat: no-repeat;
+    width: 100vw;
+    /* height: calc(100vh + 20px); */
+    overflow-x:hidden;
+    background-position: center;
+}
 a {
     color: white !important;
+}
+.forDivThree {
+    margin-top: 1%;
+    margin-bottom: 1%;
 }
 .forDivThree,
 .forDivTwo,
