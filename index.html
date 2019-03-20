@@ -12,6 +12,8 @@
     <link rel="stylesheet" type="text/css" href="assets/css/app.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFtzSO-5M7RAhGkouX3IzEfJ5_uDGCcbY&libraries=places&callback=initMap" async defer></script>
+    <script type="text/javascript" src="assets/javascript/appForMap.js"></script>
     <title>Mixology Must</title>
 </head>
 
@@ -263,12 +265,13 @@
     <div class="row" id="fifth" data-magellan-target="fifth">
         <div class="small-12 medium-6 large-6 columns">
             <div class="row">
-                <h3>Find a Liquor Store Near You!</h3>
+                <h3 id="forHeaderLiquor">Find a Liquor Store Near You!</h3>
             </div>
-            <div class="row">
-                <div class="small-12 medium-6 large-6 columns" id="putMapHere">    
+            <div class="row rowForMap">
+                <div class="small-12 medium-12 large-6 columns" id="putMapHere">    
                 </div>
-                <div class="small-12 medium-6 large- columns" id="putTimerHere">
+                <div class="small-12 medium-12 large-6 columns" id="putTimerHere">
+                    <p>some content</p>
                 </div>
             </div>
         </div>

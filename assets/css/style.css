@@ -104,6 +104,20 @@ a {
     border-radius: 8px; */
     /* background: rgba(211, 129, 52, 0.2); */
 }
+#forHeaderLiquor {
+    margin: 5%;
+    text-align: center;
+}
+/* Used to view the map */
+#putMapHere {    
+    height: 400px;   
+    width: 90%;  
+    margin-left: 5%;
+    margin-right: 5%;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    /* margin-right: 10%; */
+}
 @media (min-width: 300px) {
     .titlePageBackground {
     background-position: 90% 50%;
