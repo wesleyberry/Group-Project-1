@@ -129,4 +129,21 @@ $(document).ready(function () {
         
 
     });
+    $("#buttonAddIngredient").on("click", function(event) {
+        event.preventDefault();
+        var ingredient = $("#add-ingredient").val().trim();
+        console.log(ingredient);
+        var newP = $("<p>");
+        $(newP).text(ingredient);
+        var newDivCallout = $("<div class=callout data-closable>");
+        // newDivCallout.addClass("callout");
+        newDivCallout.attr("data-closable");
+        var newButton = $("<button data-close>");
+        $(newButton).addClass("close-button");
+        $(newButton).attr("aria-label", "Close alert").attr("type", "button");
+        $(newButton).append("<span aria-hidden='true'>&times;</span>");
+        $(newDivCallout).append(newButton);
+        $(newDivCallout).append(newP);
+        $("#displayIngredients").append(newDivCallout);
+    });
 })
