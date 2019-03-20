@@ -12,7 +12,6 @@
     <link rel="stylesheet" type="text/css" href="assets/css/app.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Mixology Must</title>
 </head>
 
@@ -25,20 +24,21 @@
         <nav class="sticky-container" data-sticky-container>
             <div class="sticky" data-sticky data-anchor="exampleId" data-sticky-on="large">
             <ul class="vertical menu" data-magellan>
-                <li><a href="#first">Top</a></li>
-                <li><a href="#second">Search</a></li>
-                <li><a href="#third">Ingredients</a></li>
-                <li><a href="#fourth">Recommendations</a></li>
-                <li><a href="#fifth">Liquor Store Locations</a></li>
+                <li id="firstButtonNav"><a href="#first">Top</a></li>
+                <li id="secondButtonNav"><a href="#second">Search</a></li>
+                <li id="thirdButtonNav"><a href="#third">Ingredients</a></li>
+                <li id="fourthButtonNav"><a href="#fourth">Recommendations</a></li>
+                <li id="fifthButtonNav"><a href="#fifth">Liquor Store Locations</a></li>
             </ul>
             </div>
         </nav>
     </div>
         <!-- Container 1 - For search bars and buttons-->
-        <div class="parallax1">
+    <div class="parallax1">
         <div class="row">
             <div class="small-12 medium-6 large-6 column forDivOne" 
             id="second" data-magellan-target="second">
+                <form>
                 <h3>Search by Drink: </h3>
                 <br>
                 <input type="search" placeholder="Drink Name" id="search-drink">
@@ -54,6 +54,7 @@
                 <input type="search" placeholder="Sweet and Sour">
                 <button type="button" class="button" id="buttonAddIngredient">Add Ingredient</button>
                 <br>
+                </form>
             </div>
             <!-- Container 2 - for displaying ingredients-->
             <div class="small-12 medium-6 large-6 column forDivTwo"
@@ -61,16 +62,31 @@
                 <h3>Ingredients List: </h3>
                 <div>
                     <ul>
-                        <li>Vodka</li>
-                        <li>Bloody Mary Mix</li>
-                        <li>Celery</li>
+                        <div class="callout" data-closable>
+                            <button class="close-button" aria-label="Close alert" type="button" data-close>
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+                            <p>Vodka</p>
+                        </div>
+                        <div class="callout" data-closable>
+                            <button class="close-button" aria-label="Close alert" type="button" data-close>
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                            <p>Bloody Mary Mix</p>
+                        </div>
+                        <div class="callout" data-closable>
+                            <button class="close-button" aria-label="Close alert" type="button" data-close>
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                            <p>Celery</p>
+                        </div>
                     </ul>
                 </div>
             </div>
         </div>
-        </div>
+    </div>
         <!-- Container 3 - for displaying cards -->
-        <div class="behindCards">
+    <div class="behindCards">
         <div class="row forDivThree" id="fourth" data-magellan-target="fourth">
             <div class="small-6 medium-3 large-3 columns">
                 <div class="card">
@@ -241,7 +257,7 @@
                 </div>
             </div>
         </div>
-        </div>
+    </div>
     <!-- Container 4 - This will hold the map -->
     <div class="row" id="fifth" data-magellan-target="fifth">
         <div class="small-12 medium-6 large-6 columns">
@@ -249,11 +265,9 @@
                 <h3>Find a Liquor Store Near You!</h3>
             </div>
             <div class="row">
-                <div class="small-12 medium-6 large-6 columns" id="putMapHere">
-                    
+                <div class="small-12 medium-6 large-6 columns" id="putMapHere">    
                 </div>
                 <div class="small-12 medium-6 large- columns" id="putTimerHere">
-
                 </div>
             </div>
         </div>
@@ -264,5 +278,4 @@
     <script type="text/javascript" src="assets/javascript/appforFoundation.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
-
 </html>
