@@ -56,6 +56,30 @@ $(document).ready(function () {
         }
     }
 
+    function makeDrinkCardsIngredients(drinkResults) {
+        for (var i = 0; i < drinkResults.length; i++) {
+            var drink = drinkResults[i];
+            var drinkCard = $("<div>");
+            drinkCard.addClass("drinkCard");
+            $(".row.forDivThree").append(drinkCard);
+            var drinkName = $("<h3>").text(drink.strDrink);
+            drinkCard.append(drinkName);
+            var drinkImg = $("<img>").attr("src", drink.strDrinkThumb);
+            drinkCard.append(drinkImg);
+
+            var expandButton = $("<button>");
+            expandButton.addClass("expand");
+            expandButton.text("expand");
+            expandButton.attr("data-expand", "expand");
+            drinkCard.append(expandButton);
+
+            $(".expand").on( "click", function(event) {
+                
+            })
+            
+        }
+    };
+
 
 
     $("#buttonSearchDrink").on("click", function (event) {
@@ -87,8 +111,9 @@ $(document).ready(function () {
             })
             .then(function (response) {
                 var drinkResults = response;
-                makeDrinkCards(drinkResults.drinks);
+                makeDrinkCardsIngredients(drinkResults.drinks);
             })
+        
 
     });
 
