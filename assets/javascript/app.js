@@ -166,22 +166,22 @@ $(document).ready(function () {
             console.log(ingredientResults);
         })
     });
-    $("#buttonAddIngredient").on("click", function(event) {
-        event.preventDefault();
-        $(".row.forDivThree").empty();
-        var ingredientQuery = $("#search-ingredient").val().trim();
-        var queryIngredientURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredientQuery;
-        $.ajax({
-                url: queryIngredientURL,
-                method: "GET"
-            })
-            .then(function (response) {
-                var drinkResults = response;
-                makeDrinkCardsIngredients(drinkResults.drinks);
-            })
+    // $("#buttonAddIngredient").on("click", function(event) {
+    //     event.preventDefault();
+    //     $(".row.forDivThree").empty();
+    //     var ingredientQuery = $("#search-ingredient").val().trim();
+    //     var queryIngredientURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredientQuery;
+    //     $.ajax({
+    //             url: queryIngredientURL,
+    //             method: "GET"
+    //         })
+    //         .then(function (response) {
+    //             var drinkResults = response;
+    //             makeDrinkCardsIngredients(drinkResults.drinks);
+    //         })
         
 
-    });
+    // });
     $("#buttonAddIngredient").on("click", function(event) {
         event.preventDefault();
         var ingredient = $("#add-ingredient").val().trim();

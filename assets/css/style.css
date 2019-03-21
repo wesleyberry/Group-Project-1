@@ -51,7 +51,9 @@ body {
     /* overflow-x: hidden; */
     background-position: center;
 }
-
+#name {
+    color: black;
+}
 h3 {
    font-size: 1.25rem;
    color: white;
@@ -71,6 +73,12 @@ a {
         padding-right: 20vw;
         padding-top: 10vh;
         padding-bottom: 10vh;
+}
+.rowForMap {
+    margin-bottom: 5%;
+}
+.rowForMapWhole {
+    height: 100vh;
 }
 .forNav {
     width: 13vw;
