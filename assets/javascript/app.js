@@ -151,7 +151,6 @@ $(document).ready(function () {
             $(".row.forDivThree").append(firstDiv);
         }
     }
-
     // function makeDrinkCardsIngredients(drinkResults) {
     //     for (var i = 0; i < drinkResults.length; i++) {
     //         var drink = drinkResults[i];
@@ -162,22 +161,15 @@ $(document).ready(function () {
     //         drinkCard.append(drinkName);
     //         var drinkImg = $("<img>").attr("src", drink.strDrinkThumb);
     //         drinkCard.append(drinkImg);
-
     //         var expandButton = $("<button>");
     //         expandButton.addClass("expand");
     //         expandButton.text("expand");
     //         expandButton.attr("data-expand", "expand");
     //         drinkCard.append(expandButton);
-
     //         $(".expand").on("click", function (event) {
-
     //         })
-
     //     }
     // };
-
-
-
     $("#buttonSearchDrink").on("click", function (event) {
         event.preventDefault();
         $(".row.forDivThree").empty();
@@ -192,11 +184,7 @@ $(document).ready(function () {
                 // makeDrinkCards(drinkResults.drinks);
                 makeDrinkCards1(drinkResults.drinks);
             });
-
-
-
     });
-
     $("#buttonSearchIngredient").on("click", function (event) {
         event.preventDefault();
         $(".row.forDivThree").empty();
@@ -235,10 +223,7 @@ $(document).ready(function () {
     //             var drinkResults = response;
     //             makeDrinkCardsIngredients(drinkResults.drinks);
     //         })
-
-
     // });
-
     function showModal(drink, ingredientList) {
         var modal = document.getElementById('myModal');
         var span = document.getElementsByClassName("close")[0];
@@ -252,15 +237,10 @@ $(document).ready(function () {
                 item.text(ingredientList[i]);
                 $("#modalDrinkIngredients").append(item);
             
-
         }
         $('#modalDrinkInstructions').text(drink.strInstructions);
         modal.style.display = "block";
-
     }
-
-
-
     $("#buttonAddIngredient").on("click", function(event) {
         event.preventDefault();
         var ingredient = $("#add-ingredient").val().trim();
