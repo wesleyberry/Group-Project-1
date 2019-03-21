@@ -54,58 +54,58 @@ $(document).ready(function () {
 
         }
     }
-    // function makeDrinkCards1(drinkResults) {
-    //     for (var i = 0; i < 4; i++) { 
-    //         var drink = drinkResults[i];
-    //         var firstDiv = $("<div>").addClass("small-6 medium-3 large-3 columns");
-    //         var secondDiv = $("<div>").addClass("card");
-    //         var thirdDiv = $("<div>").addClass("card-divider");
-    //         var firstHeader = $("<h3>").attr("id", "name").text(drink.strDrink);
-    //         var fourthDiv = $("<div>").addClass("card-section").attr("id", "photo");
-    //         var newImg = $("<img>").attr("src", drink.strDrinkThumb);
-    //         var fifthDiv = $("<div>").addClass("card-section");
-    //         var sixthDiv = $("<div>").attr("id", "ingredients");
-    //         var secondHeader = $("<h4>").text("Ingredients: ");
-    //         var newUl = $("<ul>");
-    //         var newButton = $("<button>").addClass("button").attr("type", "button");
-    //         newButton.attr("data-toggle", "example-dropdown-top-center" + (i+1)).text("Instructions");
-    //         var seventhDiv = $("<div>").addClass("dropdown-pane").attr("data-position", "top");
-    //         seventhDiv.attr("data-alignment", "center").attr("id", "example-dropdown-top-center" + (i+1));
-    //         seventhDiv.attr("data-dropdown", "").attr("data-auto-focus", "true");
-    //         var eighthDiv = $("<div>").attr("id", "instructions");
-    //         var newOl = $("<ol>");
-    //         // var newP = $("<p>").text(drink.strInstructions);
-    //         var instructions = $("<li>").text(drink.strInstructions);
+    function makeDrinkCards1(drinkResults) {
+        for (var i = 0; i < 4; i++) { 
+            var drink = drinkResults[i];
+            var firstDiv = $("<div>").addClass("small-6 medium-3 large-3 columns");
+            var secondDiv = $("<div>").addClass("card");
+            var thirdDiv = $("<div>").addClass("card-divider");
+            var firstHeader = $("<h3>").attr("id", "name").text(drink.strDrink);
+            var fourthDiv = $("<div>").addClass("card-section").attr("id", "photo");
+            var newImg = $("<img>").attr("src", drink.strDrinkThumb);
+            var fifthDiv = $("<div>").addClass("card-section");
+            var sixthDiv = $("<div>").attr("id", "ingredients");
+            var secondHeader = $("<h4>").text("Ingredients: ");
+            var newUl = $("<ul>");
+            var newButton = $("<button>").addClass("button").attr("type", "button");
+            newButton.attr("data-toggle", "example-dropdown-top-center" + (i+1)).text("Instructions");
+            var seventhDiv = $("<div>").addClass("dropdown-pane").attr("data-position", "top");
+            seventhDiv.attr("data-alignment", "center").attr("id", "example-dropdown-top-center" + (i+1));
+            seventhDiv.attr("data-dropdown", "").attr("data-auto-focus", "true");
+            var eighthDiv = $("<div>").attr("id", "instructions");
+            var newOl = $("<ol>");
+            // var newP = $("<p>").text(drink.strInstructions);
+            var instructions = $("<li>").text(drink.strInstructions);
 
-    //         for (var ingIndex = 1; ingIndex <= 15; ingIndex++) {
-    //             var ingredientProperty = "strIngredient" + ingIndex;
-    //             var ingredient = drink[ingredientProperty];
-    //             var measureProperty = "strMeasure" + ingIndex;
-    //             var measure = drink[measureProperty];
+            for (var ingIndex = 1; ingIndex <= 15; ingIndex++) {
+                var ingredientProperty = "strIngredient" + ingIndex;
+                var ingredient = drink[ingredientProperty];
+                var measureProperty = "strMeasure" + ingIndex;
+                var measure = drink[measureProperty];
 
-    //             if (ingredient != "" && ingredient != null) {
-    //                 var item = $("<li>");
-    //                 item.text(measure + " " + ingredient);
-    //                 newUl.append(item);
-    //             }
-    //         }
-    //         newOl.append(instructions);
-    //         thirdDiv.append(firstHeader);
-    //         fourthDiv.append(newImg);
-    //         eighthDiv.append(newOl);
-    //         seventhDiv.append(eighthDiv);
-    //         sixthDiv.append(secondHeader);
-    //         sixthDiv.append(newUl);
-    //         fifthDiv.append(sixthDiv);
-    //         fifthDiv.append(newButton);
-    //         fifthDiv.append(seventhDiv);
-    //         secondDiv.append(thirdDiv);
-    //         secondDiv.append(fourthDiv);
-    //         secondDiv.append(fifthDiv);
-    //         firstDiv.append(secondDiv);
-    //         $(".row.forDivThree").append(firstDiv);
-    //     }
-    // }
+                if (ingredient != "" && ingredient != null) {
+                    var item = $("<li>");
+                    item.text(measure + " " + ingredient);
+                    newUl.append(item);
+                }
+            }
+            newOl.append(instructions);
+            thirdDiv.append(firstHeader);
+            fourthDiv.append(newImg);
+            eighthDiv.append(newOl);
+            seventhDiv.append(eighthDiv);
+            sixthDiv.append(secondHeader);
+            sixthDiv.append(newUl);
+            fifthDiv.append(sixthDiv);
+            fifthDiv.append(newButton);
+            fifthDiv.append(seventhDiv);
+            secondDiv.append(thirdDiv);
+            secondDiv.append(fourthDiv);
+            secondDiv.append(fifthDiv);
+            firstDiv.append(secondDiv);
+            $(".row.forDivThree").append(firstDiv);
+        }
+    }
 
     function makeDrinkCardsIngredients(drinkResults) {
         for (var i = 0; i < drinkResults.length; i++) {
@@ -144,8 +144,8 @@ $(document).ready(function () {
             })
             .then(function (response) {
                 var drinkResults = response;
-                makeDrinkCards(drinkResults.drinks);
-                // makeDrinkCards1(drinkResults.drinks);
+                // makeDrinkCards(drinkResults.drinks);
+                makeDrinkCards1(drinkResults.drinks);
             });
 
 

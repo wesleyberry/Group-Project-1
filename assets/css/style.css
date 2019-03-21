@@ -35,23 +35,16 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
-#forTitle {
-    /* background: url("../images/MixologyMust.png"); */
-    background: url("../images/title.png");
-    /* background-color: white; */
-    z-index: 10;
-    position: absolute;
-    margin-top: 12%;
-    margin-left: 1%;
-    width: 800px; 
-    height: 500px;
-}
 .columns {
     padding-right: .5rem;
     padding-left: .5rem;
 }
+.card {
+    max-height: 90vh;
+    overflow-y: auto;
+}
 .behindCards {
-    background: url("../images/photo5.jpg");
+    background-image: url("../images/photo5.jpg");
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -111,10 +104,10 @@ a {
     margin-right: auto;
 }
 .forDivThree {
-    border-style: solid;
+    /* border-style: solid;
     border-width: 4px;
     border-color: rgb(187, 81, 10);
-    border-radius: 8px;
+    border-radius: 8px; */
     background: rgba(211, 129, 52, 0.1);
     padding-top:1%;
     margin-top: 1%;
@@ -140,9 +133,31 @@ a {
         position: absolute;
         z-index: 0;
     }
+    #putMapHere {    
+        height: 400px;   
+        width: 90%;  
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        /* margin-right: 10%; */
+    }
     .row1 {
         padding-left: 10vw;
         padding-right: 10vw;
+    }
+    #forTitle {
+        background-image: url("../images/title.png");
+        z-index: 10;
+        position: absolute;
+        margin-top: 3%;
+        margin-left: 1%;
+        min-width: 95%;
+        max-width: 100%; 
+        height: 300px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        /* display: flex; */
     }
 }
 /* Small devices (landscape phones, 576px and up) */
@@ -159,11 +174,28 @@ a {
         margin-bottom: 1%;
         /* margin-right: 10%; */
     }
+    #forTitle {
+        margin-top: 450px;
+        margin-left: 1%;
+        min-width: 95%;
+        max-width: 100%; 
+        height: 400px;
+        /* display: flex; */
+    }
 }
 
  /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
-
+    #forTitle {
+        margin-top: 450px;
+        margin-left: 1%;
+        min-width: 97%;
+        max-width: 100%; 
+        height: 400px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        /* display: flex; */
+    }
 }
 
  /* Large devices (desktops, 992px and up) */
@@ -179,11 +211,28 @@ a {
         height: 500px;   
         width: 90%;  
     }
+    #forTitle {
+        margin-top: 400px;
+        margin-left: 1%;
+        width: 800px;
+        min-width: auto;
+        max-width: 100%; 
+        height: 500px;
+        background-size: contain;
+        background-repeat: no-repeat;
+        /* display: flex; */
+    }
 }
 
  /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
-    
+    #forTitle {
+        margin-top: 18%;
+        margin-left: 2%;
+        width: 600px; 
+        height: 480px;
+        background-size: cover;
+    }
 }
 
 @media (min-width: 1400px) {
@@ -193,5 +242,13 @@ a {
     .row1 {
         padding-left: 18vw;
         padding-right: 18vw;
+    }
+    #forTitle {
+        margin-top: 15%;
+        margin-left: 2%;
+        width: 800px; 
+        height: 480px;
+        background-size: cover;
+
     }
 }
