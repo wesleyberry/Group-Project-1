@@ -1,5 +1,5 @@
 $(document).ready(function () {
-    function makeDrinkCards(drinkResults) {   
+    function makeDrinkCards(drinkResults) {
         for (var i = 0; i < drinkResults.length; i++) {
 
             var drink = drinkResults[i];
@@ -11,6 +11,7 @@ $(document).ready(function () {
             var drinkImg = $("<img>").attr("src", drink.strDrinkThumb);
             drinkCard.append(drinkImg);
 
+            var ingredientList = [];
             for (var ingIndex = 1; ingIndex <= 15; ingIndex++) {
                 var ingredientProperty = "strIngredient" + ingIndex;
                 var ingredient = drink[ingredientProperty];
@@ -19,8 +20,10 @@ $(document).ready(function () {
 
                 if (ingredient != "" && ingredient != null) {
                     var item = $("<li>");
-                    item.text(measure + " " + ingredient);
+                    var combined = measure + " " + ingredient;
+                    item.text(combined);
                     drinkCard.append(item);
+                    ingredientList.push(combined);
                 }
 
             }
@@ -32,26 +35,89 @@ $(document).ready(function () {
             instructions.css("display", "none");
             instructions.appendTo(drinkCard);
 
-            var expandButton = $("<button>");
-            expandButton.addClass("expand");
-            expandButton.text("Expand");
-            expandButton.attr('data-id', instructionsId);
-            expandButton.attr('data-expand', 'expand');
-            drinkCard.append(expandButton);
+            var more = $("<button>");
+            more.addClass("more");
+            more.text("more");
+            more.appendTo(drinkCard);
+            more.data('drink', drink);
+            more.data('ingredientList', ingredientList);
 
-            $(".expand").on("click", function (event) {
-                var paragraphId= "#" + $(this).attr("data-id");
-                if ( $(this).attr("data-expand") === "Expand") {
-                    $(paragraphId).css("display", "inline");
-                    $(this).text("collapse");
-                    $(this).attr("data-expand", "collapse");
-                } else {
-                    $(paragraphId).css('display', 'none');
-                    $(this).text("Expand");
-                    $(this).attr("data-expand", "Expand");
-                }
+            var modal = document.getElementById('myModal');
+            var span = document.getElementsByClassName("close")[0];
+
+
+            // $(".drinkInfo").append(drinkImg);
+            //$(".drinkInfo").append(instructions);
+
+            more.on("click", function () {
+                var buttonDrink = $(this).data('drink');
+                var buttonIngredients = $(this).data('ingredientList');
+                showModal(buttonDrink, buttonIngredients);
+
             })
 
+            span.onclick = function () {
+                modal.style.display = "none";
+            }
+
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
+                }
+            }
+
+        }
+    }
+    function makeDrinkCards1(drinkResults) {
+        for (var i = 0; i < 4; i++) { 
+            var drink = drinkResults[i];
+            var firstDiv = $("<div>").addClass("small-6 medium-3 large-3 columns");
+            var secondDiv = $("<div>").addClass("card");
+            var thirdDiv = $("<div>").addClass("card-divider");
+            var firstHeader = $("<h3>").attr("id", "name").text(drink.strDrink);
+            var fourthDiv = $("<div>").addClass("card-section").attr("id", "photo");
+            var newImg = $("<img>").attr("src", drink.strDrinkThumb);
+            var fifthDiv = $("<div>").addClass("card-section");
+            var sixthDiv = $("<div>").attr("id", "ingredients");
+            var secondHeader = $("<h4>").text("Ingredients: ");
+            var newUl = $("<ul>");
+            var newButton = $("<button>").addClass("button").attr("type", "button");
+            newButton.attr("data-toggle", "example-dropdown-top-center" + (i+1)).text("Instructions");
+            var seventhDiv = $("<div>").addClass("dropdown-pane").attr("data-position", "top");
+            seventhDiv.attr("data-alignment", "center").attr("id", "example-dropdown-top-center" + (i+1));
+            seventhDiv.attr("data-dropdown", "").attr("data-auto-focus", "true");
+            var eighthDiv = $("<div>").attr("id", "instructions");
+            var newOl = $("<ol>");
+            // var newP = $("<p>").text(drink.strInstructions);
+            var instructions = $("<li>").text(drink.strInstructions);
+
+            for (var ingIndex = 1; ingIndex <= 15; ingIndex++) {
+                var ingredientProperty = "strIngredient" + ingIndex;
+                var ingredient = drink[ingredientProperty];
+                var measureProperty = "strMeasure" + ingIndex;
+                var measure = drink[measureProperty];
+
+                if (ingredient != "" && ingredient != null) {
+                    var item = $("<li>");
+                    item.text(measure + " " + ingredient);
+                    newUl.append(item);
+                }
+            }
+            newOl.append(instructions);
+            thirdDiv.append(firstHeader);
+            fourthDiv.append(newImg);
+            eighthDiv.append(newOl);
+            seventhDiv.append(eighthDiv);
+            sixthDiv.append(secondHeader);
+            sixthDiv.append(newUl);
+            fifthDiv.append(sixthDiv);
+            fifthDiv.append(newButton);
+            fifthDiv.append(seventhDiv);
+            secondDiv.append(thirdDiv);
+            secondDiv.append(fourthDiv);
+            secondDiv.append(fifthDiv);
+            firstDiv.append(secondDiv);
+            $(".row.forDivThree").append(firstDiv);
         }
     }
 
@@ -72,10 +138,10 @@ $(document).ready(function () {
             expandButton.attr("data-expand", "expand");
             drinkCard.append(expandButton);
 
-            $(".expand").on( "click", function(event) {
-                
+            $(".expand").on("click", function (event) {
+
             })
-            
+
         }
     };
 
@@ -92,7 +158,8 @@ $(document).ready(function () {
             })
             .then(function (response) {
                 var drinkResults = response;
-                makeDrinkCards(drinkResults.drinks);
+                // makeDrinkCards(drinkResults.drinks);
+                makeDrinkCards1(drinkResults.drinks);
             });
 
 
@@ -100,20 +167,31 @@ $(document).ready(function () {
     });
 
     $("#buttonSearchIngredient").on("click", function (event) {
-    event.preventDefault();
-    $(".grid-container").empty();
-    var ingredientQuery = $("#search-ingredient").val().trim();
-    var queryIngredientURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredientQuery;
-    $.ajax({
-            url: queryIngredientURL,
-            method: "GET"
-        })
-        .then(function (response) {
-            var ingredientResults = response;
-            console.log(ingredientResults);
-        })
+        event.preventDefault();
+        $(".row.forDivThree").empty();
+        var ingredientQuery = $("#search-ingredient").val().trim();
+        var queryIngredientURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredientQuery;
+        $.ajax({
+                url: queryIngredientURL,
+                method: "GET"
+            })
+            .then(function (response) {
+                var ingredientResults = response;
+                for (var i = 0; i < ingredientResults.drinks.length; i++) {
+                    var queryIdURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + ingredientResults.drinks[i].idDrink;
+                    $.ajax({
+                            url: queryIdURL,
+                            method: "GET"
+                        })
+                        .then(function (response) {
+                            var idResults = response.drinks;
+                            makeDrinkCards(idResults);
+                        })
+                }
+
+            })
     });
-    $("#buttonAddIngredient").on("click", function(event) {
+    $("#buttonAddIngredient").on("click", function (event) {
         event.preventDefault();
         $(".row.forDivThree").empty();
         var ingredientQuery = $("#search-ingredient").val().trim();
@@ -126,7 +204,49 @@ $(document).ready(function () {
                 var drinkResults = response;
                 makeDrinkCardsIngredients(drinkResults.drinks);
             })
-        
+
 
     });
+<<<<<<< HEAD
+
+    function showModal(drink, ingredientList) {
+        var modal = document.getElementById('myModal');
+        var span = document.getElementsByClassName("close")[0];
+
+        $('#modalDrinkName').text(drink.strDrink);
+        $('#modalDrinkImg').attr("src", drink.strDrinkThumb);
+        $("#modalDrinkIngredients").empty();
+        for (var i = 0; i < ingredientList.length; i++) {
+            
+                var item = $("<li>");
+                item.text(ingredientList[i]);
+                $("#modalDrinkIngredients").append(item);
+            
+
+        }
+        $('#modalDrinkInstructions').text(drink.strInstructions);
+        modal.style.display = "block";
+
+    }
+
+
+
+=======
+    $("#buttonAddIngredient").on("click", function(event) {
+        event.preventDefault();
+        var ingredient = $("#add-ingredient").val().trim();
+        console.log(ingredient);
+        var newP = $("<p>");
+        $(newP).text(ingredient);
+        var newDivCallout = $("<div class=callout data-closable>");
+        newDivCallout.attr("data-closable");
+        var newButton = $("<button data-close>");
+        $(newButton).addClass("close-button");
+        $(newButton).attr("aria-label", "Close alert").attr("type", "button");
+        $(newButton).append("<span aria-hidden='true'>&times;</span>");
+        $(newDivCallout).append(newButton);
+        $(newDivCallout).append(newP);
+        $("#displayIngredients").append(newDivCallout);
+    });
+>>>>>>> master
 })
