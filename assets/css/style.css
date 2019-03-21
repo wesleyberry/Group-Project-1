@@ -1,6 +1,6 @@
 body {
     font-family: Pona,Georgia,Times,Serif;
-    background-color: rgb(83, 83, 83);
+    /* background-color: rgb(83, 83, 83); */
     overflow-x: hidden;
 }
 .titlePageBackground {
@@ -51,7 +51,9 @@ body {
     /* overflow-x: hidden; */
     background-position: center;
 }
-
+#name {
+    color: black;
+}
 h3 {
    font-size: 1.25rem;
    color: white;
@@ -72,17 +74,26 @@ a {
         padding-top: 10vh;
         padding-bottom: 10vh;
 }
+.rowForMap {
+    margin-bottom: 5%;
+}
+.rowForMapWhole {
+    height: 100vh;
+}
 .forNav {
     width: 13vw;
-    z-index: 2 !important;
+    z-index: 3 !important;
+    position: relative;
 }
 .forDivTwo {
     max-height: 500px;
+}
+#displayIngredients {
     overflow-y: auto;
+    max-height: 450px;
 }
 #firstButtonNav,
 #secondButtonNav,
-#thirdButtonNav,
 #fourthButtonNav,
 #fifthButtonNav {
     width: auto;
@@ -102,12 +113,13 @@ a {
 .forDivOne,
 .mapDiv {
     z-index:2;
-    /* border-style: solid;
-    border-width: 4px;
-    border-color: rgb(187, 81, 10);
-    border-radius: 8px; */
-    /* background: rgba(211, 129, 52, 0.2); */
 }
+#forHeaderLiquor {
+    margin: 5%;
+    text-align: center;
+    color: white;
+}
+/* Used to view the map */
 @media (min-width: 300px) {
     .titlePageBackground {
     background-position: 90% 50%;
@@ -117,11 +129,24 @@ a {
         position: absolute;
         z-index: 0;
     }
+    .row1 {
+        padding-left: 10vw;
+        padding-right: 10vw;
+    }
 }
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     .titlePageBackground {
     background-position: 90% 50%;
+    }
+    #putMapHere {    
+        height: 400px;   
+        width: 90%;  
+        margin-left: 5%;
+        margin-right: 5%;
+        margin-top: 1%;
+        margin-bottom: 1%;
+        /* margin-right: 10%; */
     }
 }
 
@@ -139,6 +164,10 @@ a {
         padding-right: .8rem;
         padding-left: .8rem;
     }
+    #putMapHere {    
+        height: 500px;   
+        width: 90%;  
+    }
 }
 
  /* Extra large devices (large desktops, 1200px and up) */
@@ -150,10 +179,8 @@ a {
     .forNav {
         visibility: visible;
     }
+    .row1 {
+        padding-left: 18vw;
+        padding-right: 18vw;
+    }
 }
-
-/* Used to view the map */
- #putMapHere {    
-    height: 300px;   
-    width: 100%;  
-  }
