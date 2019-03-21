@@ -73,6 +73,9 @@ a {
 .row {
     z-index: 1;
 }
+.sticky {
+    transform: translateX(83vw);
+}
 .row1 {
         background: rgba(00, 00, 00, 0.9);
         width: 100vw;
@@ -89,7 +92,7 @@ a {
     height: 100vh;
 }
 .forNav {
-    width: 13vw;
+    width: 16vw;
     z-index: 3 !important;
     position: relative;
 }
@@ -105,7 +108,12 @@ a {
 #fourthButtonNav,
 #fifthButtonNav {
     width: auto;
-    margin-right: auto;
+    margin-right: 0;
+    font-size: 1.5em;
+    text-align: right;
+}
+#fourthButtonNav {
+    
 }
 .forDivThree {
     background: rgba(211, 129, 52, 0.1);
@@ -274,7 +282,7 @@ width: 250px;
         margin-left: 0;
         width: 800px;
         min-width: auto;
-        max-width: 60%; 
+        max-width: 53%; 
         height: 500px;
         background-size: cover;
         background-repeat: no-repeat;
