@@ -14,7 +14,8 @@ FIRE BASE
 JQUERY
 API'S
 
-
+Find the deployed page here:
+https://wesleyberry.github.io/Group-Project-1/
 
 
 The project was made by
