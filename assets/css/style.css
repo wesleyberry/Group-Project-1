@@ -35,6 +35,17 @@ body {
     background-repeat: no-repeat;
     background-size: cover;
 }
+#forTitle {
+    /* background: url("../images/MixologyMust.png"); */
+    background: url("../images/title.png");
+    /* background-color: white; */
+    z-index: 10;
+    position: absolute;
+    margin-top: 12%;
+    margin-left: 1%;
+    width: 800px; 
+    height: 500px;
+}
 .columns {
     padding-right: .5rem;
     padding-left: .5rem;
