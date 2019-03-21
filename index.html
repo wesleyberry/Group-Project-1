@@ -11,59 +11,61 @@
     <link rel="stylesheet" type="text/css" href="assets/css/app.css">
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFtzSO-5M7RAhGkouX3IzEfJ5_uDGCcbY&libraries=places&callback=initMap" async defer></script>
+    <script
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFtzSO-5M7RAhGkouX3IzEfJ5_uDGCcbY&libraries=places&callback=initMap"
+        async defer></script>
     <script type="text/javascript" src="assets/javascript/appForMap.js"></script>
     <title>Mixology Must</title>
 </head>
 
 <body>
     <div class="parallax1">
-    <div class="firstDiv" id="first" data-magellan-target="first">
-        <!-- <a href="index.html" target="_blank"><img src="assets/images/image.png" alt="MixologyMust"></a> -->
-    </div>
-    <!-- Magellan for navigation -->
-    <div class="cell large-3 forNav">
-        <nav class="sticky-container" data-sticky-container>
-            <div class="sticky" data-sticky data-anchor="exampleId" data-sticky-on="large">
-                <ul class="vertical menu" data-magellan>
-                    <li id="firstButtonNav"><a href="#first">Top</a></li>
-                    <li id="secondButtonNav"><a href="#second">Search</a></li>
-                    <li id="thirdButtonNav"><a href="#third">Ingredients</a></li>
-                    <li id="fourthButtonNav"><a href="#fourth">Recommendations</a></li>
-                    <li id="fifthButtonNav"><a href="#fifth">Liquor Store Locations</a></li>
-                </ul>
-            </div>
-        </nav>
-    </div>
+        <div class="firstDiv" id="first" data-magellan-target="first">
+            <!-- <a href="index.html" target="_blank"><img src="assets/images/image.png" alt="MixologyMust"></a> -->
+        </div>
+        <!-- Magellan for navigation -->
+        <div class="cell large-3 forNav">
+            <nav class="sticky-container" data-sticky-container>
+                <div class="sticky" data-sticky data-anchor="exampleId" data-sticky-on="large">
+                    <ul class="vertical menu" data-magellan>
+                        <li id="firstButtonNav"><a href="#first">Top</a></li>
+                        <li id="secondButtonNav"><a href="#second">Search</a></li>
+                        <li id="thirdButtonNav"><a href="#third">Ingredients</a></li>
+                        <li id="fourthButtonNav"><a href="#fourth">Recommendations</a></li>
+                        <li id="fifthButtonNav"><a href="#fifth">Liquor Store Locations</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
         <!-- Container 1 - For search bars and buttons-->
-    <div>
-        <div class="row row1">
-            <div class="small-12 medium-6 large-6 column forDivOne" 
-            id="second" data-magellan-target="second">
-                <form>
-                <h3>Search by Drink: </h3>
-                <br>
-                <input type="search" placeholder="Drink Name" id="search-drink">
-                <button type="button" class="button" id="buttonSearchDrink">Search</button>
-                <br>
-                <h3>Search by Ingredient: </h3>
-                <br>
-                <input type="search" placeholder="Ex: Whiskey, bitters, sugar, water" id="search-ingredient">
-                <button type="button" class="button" id="buttonSearchIngredient">Search</button>
-                <br>
-                <h3>Add Ingredient to List: </h3>
-                <br>
-                <input type="search" placeholder="Sweet and Sour" id="add-ingredient">
-                <button type="button" class="button" id="buttonAddIngredient">Add Ingredient</button>
-                <br>
-                </form>
-            </div>
-            <!-- Container 2 - for displaying ingredients-->
-            <div class="small-12 medium-6 large-6 column forDivTwo" id="third" data-magellan-target="third">
-                <h3>Ingredients List: </h3>
-                <div>
-                    <ul id="displayIngredients">
-                        <!-- <div class="callout" data-closable>
+        <div>
+            <div class="row row1">
+                <div class="small-12 medium-6 large-6 column forDivOne" id="second" data-magellan-target="second">
+                    <form>
+                        <h3>Search by Drink: </h3>
+                        <br>
+                        <input type="search" placeholder="Drink Name" id="search-drink">
+                        <button type="button" class="button" id="buttonSearchDrink">Search</button>
+                        <br>
+                        <h3>Search by Ingredient: </h3>
+                        <br>
+                        <input type="search" placeholder="Ex: Whiskey, bitters, sugar, water" id="search-ingredient">
+                        <button type="button" class="button" id="buttonSearchIngredient">Search</button>
+                        <br>
+                        <h3>Add Ingredient to List: </h3>
+                        <br>
+                        <input type="search" placeholder="Sweet and Sour" id="add-ingredient">
+                        <button type="button" class="button" id="buttonAddIngredient">Add Ingredient</button>
+                        <br>
+                    </form>
+                </div>
+                <!-- Container 2 - for displaying ingredients-->
+                <div class="row align-right">
+                    <div class="small-12 medium-6 large-6 column forDivTwo" id="third" data-magellan-target="third">
+                        <h3>Ingredients List: </h3>
+                        <div>
+                            <ul id="displayIngredients">
+                                <!-- <div class="callout" data-closable>
                             <button class="close-button" aria-label="Close alert" type="button" data-close>
                                 <span aria-hidden="true">&times;</span>
                             </button>
@@ -81,13 +83,14 @@
                             </button>
                             <p>Celery</p>
                         </div> -->
-                    </ul>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-        <!-- Container 3 - for displaying cards -->
+    <!-- Container 3 - for displaying cards -->
     <div class="behindCards">
         <div class="row forDivThree" id="fourth" data-magellan-target="fourth">
             <div class="small-6 medium-3 large-3 columns">
@@ -111,9 +114,10 @@
                                 <li id="ingredient-7"><span id="measurement-7"></span></li>
                             </ul>
                         </div>
-                        <button class="button" type="button" data-toggle="example-dropdown-top-center1">Instructions</button>
-                        <div class="dropdown-pane" data-position="top" data-alignment="center" id="example-dropdown-top-center1"
-                            data-dropdown data-auto-focus="true">
+                        <button class="button" type="button"
+                            data-toggle="example-dropdown-top-center1">Instructions</button>
+                        <div class="dropdown-pane" data-position="top" data-alignment="center"
+                            id="example-dropdown-top-center1" data-dropdown data-auto-focus="true">
                             <!-- My dropdown content in here -->
                             <div id="instructions">
                                 <ol>
@@ -125,8 +129,8 @@
                         </div>
                         <button class="button" type="button" data-toggle="example-dropdown-bottom-center1">Nutritional
                             Facts</button>
-                        <div class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-center1"
-                            data-dropdown data-auto-focus="true">
+                        <div class="dropdown-pane" data-position="bottom" data-alignment="center"
+                            id="example-dropdown-bottom-center1" data-dropdown data-auto-focus="true">
                             <!-- My dropdown content in here -->
                             <div id="nutrition">
                                 Nutritional Facts:
@@ -156,9 +160,10 @@
                                 <li id="ingredient-7"><span id="measurement-7"></span></li>
                             </ul>
                         </div>
-                        <button class="button" type="button" data-toggle="example-dropdown-top-center2">Instructions</button>
-                        <div class="dropdown-pane" data-position="top" data-alignment="center" id="example-dropdown-top-center2"
-                            data-dropdown data-auto-focus="true">
+                        <button class="button" type="button"
+                            data-toggle="example-dropdown-top-center2">Instructions</button>
+                        <div class="dropdown-pane" data-position="top" data-alignment="center"
+                            id="example-dropdown-top-center2" data-dropdown data-auto-focus="true">
                             <!-- My dropdown content in here -->
                             <div id="instructions">
                                 <ol>
@@ -170,8 +175,8 @@
                         </div>
                         <button class="button" type="button" data-toggle="example-dropdown-bottom-center2">Nutritional
                             Facts</button>
-                        <div class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-center2"
-                            data-dropdown data-auto-focus="true">
+                        <div class="dropdown-pane" data-position="bottom" data-alignment="center"
+                            id="example-dropdown-bottom-center2" data-dropdown data-auto-focus="true">
                             <!-- My dropdown content in here -->
                             <div id="nutrition">
                                 Nutritional Facts:
@@ -201,9 +206,10 @@
                                 <li id="ingredient-7"><span id="measurement-7"></span></li>
                             </ul>
                         </div>
-                        <button class="button" type="button" data-toggle="example-dropdown-top-center3">Instructions</button>
-                        <div class="dropdown-pane" data-position="top" data-alignment="center" id="example-dropdown-top-center3"
-                            data-dropdown data-auto-focus="true">
+                        <button class="button" type="button"
+                            data-toggle="example-dropdown-top-center3">Instructions</button>
+                        <div class="dropdown-pane" data-position="top" data-alignment="center"
+                            id="example-dropdown-top-center3" data-dropdown data-auto-focus="true">
                             <!-- My dropdown content in here -->
                             <div id="instructions">
                                 <ol>
@@ -215,8 +221,8 @@
                         </div>
                         <button class="button" type="button" data-toggle="example-dropdown-bottom-center3">Nutritional
                             Facts</button>
-                        <div class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-center3"
-                            data-dropdown data-auto-focus="true">
+                        <div class="dropdown-pane" data-position="bottom" data-alignment="center"
+                            id="example-dropdown-bottom-center3" data-dropdown data-auto-focus="true">
                             <!-- My dropdown content in here -->
                             <div id="nutrition">
                                 Nutritional Facts:
@@ -246,9 +252,10 @@
                                 <li id="ingredient-7"><span id="measurement-7"></span></li>
                             </ul>
                         </div>
-                        <button class="button" type="button" data-toggle="example-dropdown-top-center4">Instructions</button>
-                        <div class="dropdown-pane" data-position="top" data-alignment="center" id="example-dropdown-top-center4"
-                            data-dropdown data-auto-focus="true">
+                        <button class="button" type="button"
+                            data-toggle="example-dropdown-top-center4">Instructions</button>
+                        <div class="dropdown-pane" data-position="top" data-alignment="center"
+                            id="example-dropdown-top-center4" data-dropdown data-auto-focus="true">
                             <!-- My dropdown content in here -->
                             <div id="instructions">
                                 <ol>
@@ -260,8 +267,8 @@
                         </div>
                         <button class="button" type="button" data-toggle="example-dropdown-bottom-center4">Nutritional
                             Facts</button>
-                        <div class="dropdown-pane" data-position="bottom" data-alignment="center" id="example-dropdown-bottom-center4"
-                            data-dropdown data-auto-focus="true">
+                        <div class="dropdown-pane" data-position="bottom" data-alignment="center"
+                            id="example-dropdown-bottom-center4" data-dropdown data-auto-focus="true">
                             <!-- My dropdown content in here -->
                             <div id="nutrition">
                                 Nutritional Facts:
@@ -291,7 +298,7 @@
     <script type="text/javascript" src="assets/javascript/vendor/foundation.js"></script>
     <script type="text/javascript" src="assets/javascript/appforFoundation.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
-   
+
     </div>
 
 
