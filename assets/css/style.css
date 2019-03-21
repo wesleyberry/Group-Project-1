@@ -43,6 +43,9 @@ body {
     max-height: 90vh;
     overflow-y: auto;
 }
+.cardFont {
+    font-family: Pona,Georgia,Times,Serif;
+}
 .behindCards {
     background-image: url("../images/photo5.jpg");
     background-size: cover;
@@ -54,6 +57,7 @@ body {
     width: 100vw;
     /* overflow-x: hidden; */
     background-position: center;
+    min-height: 600px;
 }
 #name {
     color: black;
@@ -104,10 +108,6 @@ a {
     margin-right: auto;
 }
 .forDivThree {
-    /* border-style: solid;
-    border-width: 4px;
-    border-color: rgb(187, 81, 10);
-    border-radius: 8px; */
     background: rgba(211, 129, 52, 0.1);
     padding-top:1%;
     margin-top: 1%;
@@ -122,6 +122,64 @@ a {
     margin: 5%;
     text-align: center;
     color: white;
+}
+.buttonStyle {
+    width: 100%;
+    height: 5vh;
+    background-color: #2ba6cb;
+    color: white;
+    font-family: Pona,Georgia,Times,Serif;
+}
+.buttonStyle:hover {
+    background-color: #085168;
+}
+/* The Modal (background) */
+.modal {
+display: none; /* Hidden by default */
+position: fixed; /* Stay in place */
+z-index: 1; /* Sit on top */
+left: 0;
+top: 0;
+width: 100%; /* Full width */
+height: 100%; /* Full height */
+overflow: auto; /* Enable scroll if needed */
+background-color: rgb(0,0,0); /* Fallback color */
+background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content/Box */
+.modal-content {
+background-color: #fefefe;
+margin: 15% auto; /* 15% from the top and centered */
+padding: 20px;
+border: 1px solid #888;
+width: 80%; /* Could be more or less, depending on screen size */
+}
+
+/* The Close Button */
+.close {
+color: #aaa;
+float: right;
+font-size: 28px;
+font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+color: black;
+text-decoration: none;
+cursor: pointer;
+}
+
+.drinkCard {
+    width: 250px;
+    margin: 6px;
+    background-color: antiquewhite;
+}
+
+.drinkCard img {
+height: 250px;
+width: 250px;
 }
 /* Used to view the map */
 @media (min-width: 300px) {
@@ -212,13 +270,13 @@ a {
         width: 90%;  
     }
     #forTitle {
-        margin-top: 400px;
-        margin-left: 1%;
+        margin-top: 290px;
+        margin-left: 0;
         width: 800px;
         min-width: auto;
-        max-width: 100%; 
+        max-width: 60%; 
         height: 500px;
-        background-size: contain;
+        background-size: cover;
         background-repeat: no-repeat;
         /* display: flex; */
     }
@@ -250,58 +308,10 @@ a {
         height: 480px;
         background-size: cover;
     }
+    /* Used to view the map */
+    /* #putMapHere {    
+        height: 300px;   
+        width: 100%;  
+    } */
 }
-/* Used to view the map */
- #putMapHere {    
-    height: 300px;   
-    width: 100%;  
-  }
 
-  /* The Modal (background) */
-.modal {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1; /* Sit on top */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    overflow: auto; /* Enable scroll if needed */
-    background-color: rgb(0,0,0); /* Fallback color */
-    background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
-  }
-  
-  /* Modal Content/Box */
-  .modal-content {
-    background-color: #fefefe;
-    margin: 15% auto; /* 15% from the top and centered */
-    padding: 20px;
-    border: 1px solid #888;
-    width: 80%; /* Could be more or less, depending on screen size */
-  }
-  
-  /* The Close Button */
-  .close {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
-  }
-
-  .drinkCard {
-      width: 250px;
-      margin: 6px;
-      background-color: antiquewhite;
-  }
-
-  .drinkCard img {
-    height: 250px;
-    width: 250px;
-  }
