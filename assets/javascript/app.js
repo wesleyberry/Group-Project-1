@@ -248,26 +248,25 @@ $(document).ready(function () {
         $(newDivCallout).append(newButton);
         $(newDivCallout).append(newP);
         $("#displayIngredients").append(newDivCallout);
+        console.log(userIngredients);
     });
 
     // Search button for add ingredients (rename "addIngredientSearch")
-      var ingredientQuery = "";
+      var ingredientQuery = userIngredients;
     $("#addIngredientSearch").on("click", function(event) {
         event.preventDefault();
-        for (i=0;i<userIngredients.length;i++){
-            var a = "";
-            a = userIngredients[i].split('').join('_');
-            ingredientQuery += a + ",";
-        }
+        console.log(userIngredients);
+        console.log(ingredientQuery);
         var queryIngredientURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredientQuery;
+            console.log(queryIngredientURL);
             $.ajax({
             url: queryIngredientURL,
             method: "GET"
         })
         .then(function (response) {
-            var ingredientResults = response;
-            for (var i = 0; i < ingredientResults.drinks.length; i++) {
-                var queryIdURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredientResults.drinks[i].idDrink;
+            var multiIngredientResults = response;
+            for (var i = 0; i < multiIngredientResults.drinks.length; i++) {
+                var queryIdURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + multiIngredientResults.drinks[i].idDrink;
                 $.ajax({
                         url: queryIdURL,
                         method: "GET"
