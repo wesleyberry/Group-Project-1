@@ -1,7 +1,7 @@
-window.onload = getMyLocation;
+window.onload = initMap;
  
 var map;
-function getMyLocation() {
+function initMap() {
   if (navigator.geolocation) {
     navigator.geolocation.getCurrentPosition(displayLocation);
   } else {
