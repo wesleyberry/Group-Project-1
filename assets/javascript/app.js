@@ -1,4 +1,5 @@
 $(document).ready(function () {
+
     function makeDrinkCards(drinkResults) {
         for (var i = 0; i < drinkResults.length; i++) {
 
@@ -18,7 +19,7 @@ $(document).ready(function () {
                 var measureProperty = "strMeasure" + ingIndex;
                 var measure = drink[measureProperty];
 
-                if (ingredient != "" && ingredient != null) {
+                if (ingredient != "" && ingredient != null) {   
                     var item = $("<li>");
                     var combined = measure + " " + ingredient;
                     item.text(combined);
@@ -151,7 +152,7 @@ $(document).ready(function () {
         event.preventDefault();
         $(".row.forDivThree").empty();
         var drinkQuery = $("#search-drink").val().trim();
-        var queryDrinkURL = "https://www.thecocktaildb.com/api/json/v1/1/search.php?s=" + drinkQuery;
+        var queryDrinkURL = "https://www.thecocktaildb.com/api/json/v2/2345454/search.php?s=" + drinkQuery;
         $.ajax({
                 url: queryDrinkURL,
                 method: "GET"
@@ -170,7 +171,7 @@ $(document).ready(function () {
         event.preventDefault();
         $(".row.forDivThree").empty();
         var ingredientQuery = $("#search-ingredient").val().trim();
-        var queryIngredientURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredientQuery;
+        var queryIngredientURL = "https://www.thecocktaildb.com/api/json/v2/2345454/filter.php?i=" + ingredientQuery;
         $.ajax({
                 url: queryIngredientURL,
                 method: "GET"
@@ -178,7 +179,7 @@ $(document).ready(function () {
             .then(function (response) {
                 var ingredientResults = response;
                 for (var i = 0; i < ingredientResults.drinks.length; i++) {
-                    var queryIdURL = "https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=" + ingredientResults.drinks[i].idDrink;
+                    var queryIdURL = "https://www.thecocktaildb.com/api/json/v2/2345454/lookup.php?i=" + ingredientResults.drinks[i].idDrink;
                     $.ajax({
                             url: queryIdURL,
                             method: "GET"
@@ -255,9 +256,10 @@ $(document).ready(function () {
       var ingredientQuery = userIngredients;
     $("#addIngredientSearch").on("click", function(event) {
         event.preventDefault();
+        $(".row.forDivThree").empty();
         console.log(userIngredients);
         console.log(ingredientQuery);
-        var queryIngredientURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredientQuery;
+        var queryIngredientURL = "https://www.thecocktaildb.com/api/json/v2/2345454/filter.php?i=" + ingredientQuery;
             console.log(queryIngredientURL);
             $.ajax({
             url: queryIngredientURL,
@@ -265,8 +267,10 @@ $(document).ready(function () {
         })
         .then(function (response) {
             var multiIngredientResults = response;
-            for (var i = 0; i < multiIngredientResults.drinks.length; i++) {
-                var queryIdURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + multiIngredientResults.drinks[i].idDrink;
+            for (var i = 0; i < 8; i++) {
+                var  j = Math.floor(Math.random()*multiIngredientResults.drinks.length);
+                console.log(j);
+                var queryIdURL = "https://www.thecocktaildb.com/api/json/v2/2345454/lookup.php?i=" + multiIngredientResults.drinks[j].idDrink;
                 $.ajax({
                         url: queryIdURL,
                         method: "GET"
@@ -276,7 +280,6 @@ $(document).ready(function () {
                         makeDrinkCards1(idResults);
                     })
             }
-            console.log(a);
         }) 
     })
 
