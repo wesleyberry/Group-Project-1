@@ -65,7 +65,6 @@ $(document).ready(function () {
                     modal.style.display = "none";
                 }
             }
-
         }
     }
     function makeDrinkCards1(drinkResults) {
@@ -73,6 +72,8 @@ $(document).ready(function () {
             var drink = drinkResults[i];
             var firstDiv = $("<div>").addClass("small-6 medium-3 large-3 columns");
             var secondDiv = $("<div>").addClass("card cardFont");
+            var overlayDiv = $("<div>").addClass("overlay").attr("id", "instructions");
+            var ingDiv = $("<p>");
             var thirdDiv = $("<div>").addClass("card-divider");
             var firstHeader = $("<h3>").attr("id", "name").text(drink.strDrink).addClass("cardFont");
             var fourthDiv = $("<div>").addClass("card-section").attr("id", "photo");
@@ -86,9 +87,9 @@ $(document).ready(function () {
             var seventhDiv = $("<div>").addClass("dropdown-pane").attr("data-position", "top");
             seventhDiv.attr("data-alignment", "center").attr("id", "example-dropdown-top-center" + (i+1));
             seventhDiv.attr("data-dropdown", "").attr("data-auto-focus", "true");
-            var eighthDiv = $("<div>").attr("id", "instructions");
             var newOl = $("<ol>");
             // var newP = $("<p>").text(drink.strInstructions);
+            var headInst = $("<h3>").text("Instructions: ").addClass("instStyle");
             var instructions = $("<li>").text(drink.strInstructions);
 
             var ingredientList = [];
@@ -136,17 +137,21 @@ $(document).ready(function () {
             newOl.append(instructions);
             thirdDiv.append(firstHeader);
             fourthDiv.append(newImg);
-            eighthDiv.append(newOl);
-            seventhDiv.append(eighthDiv);
+            // eighthDiv.append(newOl);
+            // seventhDiv.append(eighthDiv);
             sixthDiv.append(secondHeader);
             sixthDiv.append(newUl);
             fifthDiv.append(sixthDiv);
-            more.appendTo(fifthDiv);
+            // more.appendTo(fifthDiv);
             // fifthDiv.append(newButton);
             fifthDiv.append(seventhDiv);
             secondDiv.append(thirdDiv);
             secondDiv.append(fourthDiv);
             secondDiv.append(fifthDiv);
+            overlayDiv.append(ingDiv);
+            overlayDiv.append(instructions);
+            overlayDiv.prepend(headInst);
+            secondDiv.append(overlayDiv);
             firstDiv.append(secondDiv);
             $(".row.forDivThree").append(firstDiv);
         }
@@ -245,7 +250,7 @@ $(document).ready(function () {
         event.preventDefault();
         var ingredient = $("#add-ingredient").val().trim();
         console.log(ingredient);
-        var newP = $("<p>");
+        var newP = $("<p>").addClass("closeButtonStyle");
         $(newP).text(ingredient);
         var newDivCallout = $("<div class=callout data-closable>");
         newDivCallout.attr("data-closable");
