@@ -69,7 +69,7 @@ $(document).ready(function () {
         }
     }
     function makeDrinkCards1(drinkResults) {
-        for (var i = 0; i < 4; i++) { 
+        for (var i = 0; i < 8; i++) { 
             var drink = drinkResults[i];
             var firstDiv = $("<div>").addClass("small-6 medium-3 large-3 columns");
             var secondDiv = $("<div>").addClass("card cardFont");
@@ -127,6 +127,17 @@ $(document).ready(function () {
             $(".row.forDivThree").append(firstDiv);
         }
     }
+    // Randomizes the cards so not the same 8 appear every time.
+    function shuffleCards(array){
+        var currentIndex = array.length, temporaryValue, randomIndex;
+    while (0 !== currentIndex) {
+        randomIndex = Math.floor(Math.random() * currentIndex);
+        currentIndex -= 1;
+        temporaryValue = array[currentIndex];
+        array[currentIndex] = array[randomIndex];
+        array[randomIndex] = temporaryValue;
+        }
+    }
     // function makeDrinkCardsIngredients(drinkResults) {
     //     for (var i = 0; i < drinkResults.length; i++) {
     //         var drink = drinkResults[i];
@@ -157,12 +168,13 @@ $(document).ready(function () {
             })
             .then(function (response) {
                 var drinkResults = response;
+                shuffleCards(drinkResults.drinks);
                 // makeDrinkCards(drinkResults.drinks);
                 makeDrinkCards1(drinkResults.drinks);
             });
         console.log(queryDrinkURL);
     });
-    $("#buttonSearchIngredient").on("click", function (event) {
+   /* $("#buttonSearchIngredient").on("click", function (event) {
         event.preventDefault();
         $(".row.forDivThree").empty();
         var ingredientQuery = $("#search-ingredient").val().trim();
@@ -186,7 +198,7 @@ $(document).ready(function () {
                 }
 
             })
-    });
+    }); */
     // $("#buttonAddIngredient").on("click", function (event) {
     //     event.preventDefault();
     //     $(".row.forDivThree").empty();
@@ -240,7 +252,7 @@ $(document).ready(function () {
 
     // Search button for add ingredients (rename "addIngredientSearch")
       var ingredientQuery = userIngredients;
-    $("#addIngredientSearch").on("click", function(event) {
+    $("#buttonSearchIngredient").on("click", function(event) {
         event.preventDefault();
         $(".row.forDivThree").empty();
         console.log(userIngredients);
@@ -253,10 +265,18 @@ $(document).ready(function () {
         })
         .then(function (response) {
             var multiIngredientResults = response;
-            for (var i = 0; i < 8; i++) {
-                var  j = Math.floor(Math.random()*multiIngredientResults.drinks.length);
-                console.log(j);
-                var queryIdURL = "https://www.thecocktaildb.com/api/json/v2/2345454/lookup.php?i=" + multiIngredientResults.drinks[j].idDrink;
+            shuffleCards(multiIngredientResults.drinks);
+            console.log(multiIngredientResults.drinks);
+            var multiIngredientResults = response;
+            //Creates 8 cards maximum, but if there are less than 8 results, shows results.
+            if (multiIngredientResults.drinks.length > 8){
+                var numOfCards = 8;
+            }
+            else {
+                var numOfCards = multiIngredientResults.drinks.length;
+            }
+            for (var i = 0; i < numOfCards; i++) {
+                var queryIdURL = "https://www.thecocktaildb.com/api/json/v2/2345454/lookup.php?i=" + multiIngredientResults.drinks[i].idDrink;
                 $.ajax({
                         url: queryIdURL,
                         method: "GET"
@@ -266,6 +286,7 @@ $(document).ready(function () {
                         makeDrinkCards1(idResults);
                     })
             }
+            
         }) 
     })
 
