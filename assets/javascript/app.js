@@ -1,4 +1,8 @@
 $(document).ready(function () {
+    $(window).scroll(function(){
+        $("#forTitle").css("opacity", 1 - $(window).scrollTop() / 500);
+      });
+
     function makeDrinkCards(drinkResults) {
         for (var i = 0; i < drinkResults.length; i++) {
 
@@ -125,9 +129,9 @@ $(document).ready(function () {
 
             })
 
-            span.onclick = function () {
-                modal.style.display = "none";
-            }
+            // span.onclick = function () {
+            //     modal.style.display = "none";
+            // }
 
             window.onclick = function (event) {
                 if (event.target == modal) {

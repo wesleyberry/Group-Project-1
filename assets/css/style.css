@@ -1,10 +1,14 @@
-body {
-    font-family: Pona,Georgia,Times,Serif;
-    /* background-color: rgb(83, 83, 83); */
+html {
     overflow-x: hidden;
 }
+body {
+    font-family: Pona,Georgia,Times,Serif;
+    margin: 0px;
+    padding: 0px;
+    overflow-x: hidden;
+    width: 100%;
+}
 .titlePageBackground {
-    /* background: url("../images/photo4.jpg"); */
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -13,7 +17,7 @@ body {
     background-repeat: no-repeat;
     width: 100vw;
     height: calc(100vh + 20px);
-    /* overflow-x: hidden; */
+    overflow-x: hidden;
     background-position: center;
 }
 .callout {
@@ -44,6 +48,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow-x: hidden;
 }
 .columns {
     padding-right: .5rem;
@@ -89,9 +94,9 @@ body {
     align-items: center;
     background-repeat: no-repeat;
     width: 100vw;
-    /* overflow-x: hidden; */
     background-position: center;
     min-height: 600px;
+    overflow-x: hidden;
 }
 #name {
     color: black;
@@ -100,15 +105,12 @@ h3 {
    font-size: 1.25rem;
    color: white;
 }
-
-a {
-    color: white !important;
+.sticky {
+    transform: translateX(83vw);
 }
 .row {
     z-index: 1;
-}
-.sticky {
-    transform: translateX(83vw);
+    max-width: 100%;
 }
 .row1 {
     background: rgba(00, 00, 00, 0.9);
@@ -118,9 +120,18 @@ a {
     padding-right: 20vw;
     padding-top: 10vh;
     padding-bottom: 10vh;
+    height: 80vh;
+}
+.row2 {
+    width: 100vw;
+    max-width: 100vw;
+    height: 20vh;
 }
 .rowForMap {
     margin-bottom: 5%;
+    max-width: 100vw !important;
+    margin-left: 13% !important;
+    margin-right: 13% !important;
 }
 .rowForMapWhole {
     height: 100vh;
@@ -129,13 +140,17 @@ a {
     width: 16vw;
     z-index: 3 !important;
     position: relative;
+    
 }
 .forDivTwo {
-    max-height: 500px;
+    max-height: 80vh;
 }
 #displayIngredients {
     overflow-y: auto;
     max-height: 450px;
+}
+#clearButton {
+    float: right;
 }
 #firstButtonNav,
 #secondButtonNav,
@@ -146,8 +161,8 @@ a {
     font-size: 1.5em;
     text-align: right;
 }
-#fourthButtonNav {
-    
+.rowLiquor {
+    max-width: 100vw !important;
 }
 .forDivThree {
     background: rgba(211, 129, 52, 0.1);
@@ -161,7 +176,7 @@ a {
     z-index:2;
 }
 #forHeaderLiquor {
-    margin: 5%;
+    margin: 5% 0 5% 0;
     text-align: center;
     color: white;
 }
@@ -169,11 +184,37 @@ a {
     width: 100%;
     height: 5vh;
     background-color: #2ba6cb;
-    color: white;
+    /* color: white; */
     font-family: Pona,Georgia,Times,Serif;
 }
 .buttonStyle:hover {
     background-color: #085168;
+}
+.button {
+    background-color:white;
+    color: black !important;
+    font-family: Pona,Georgia,Times,Serif;
+    border: none;
+    padding: 16px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 2px 2px;
+    cursor: pointer;
+   }
+  .button:hover {
+    background-color:#533A2B;
+    color: white;
+  }
+  .button.active {
+      
+  }
+.searchColor {
+    color: black;
+}
+.searchColorNav {
+    color: white;
 }
 /* The Modal (background) */
 .modal {
@@ -212,13 +253,11 @@ color: black;
 text-decoration: none;
 cursor: pointer;
 }
-
 .drinkCard {
     width: 250px;
     margin: 6px;
     background-color: antiquewhite;
 }
-
 .drinkCard img {
 height: 250px;
 width: 250px;
@@ -227,11 +266,13 @@ width: 250px;
 @media (min-width: 300px) {
     .titlePageBackground {
     background-position: 90% 50%;
+    overflow-x: hidden;
     }
     .forNav {
         visibility: hidden;
-        position: absolute;
+        /* position: absolute; */
         z-index: 0;
+        position: fixed;
     }
     #putMapHere {    
         height: 400px;   
@@ -243,6 +284,11 @@ width: 250px;
         /* margin-right: 10%; */
     }
     .row1 {
+        padding-left: 10vw;
+        padding-right: 10vw;
+        height: 140vh;
+    }
+    .forDivThree {
         padding-left: 10vw;
         padding-right: 10vw;
     }
@@ -283,7 +329,11 @@ width: 250px;
         /* display: flex; */
     }
 }
-
+@media (min-width: 640px) {
+    .row1 {
+    height: 80vh;
+    }
+}
  /* Medium devices (tablets, 768px and up) */
 @media (min-width: 768px) {
     #forTitle {

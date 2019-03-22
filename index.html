@@ -14,7 +14,6 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFtzSO-5M7RAhGkouX3IzEfJ5_uDGCcbY&libraries=places&callback=initMap"
         async defer></script>
-    <script type="text/javascript" src="assets/javascript/appForMap.js"></script>
     <title>Mixology Must</title>
 </head>
 
@@ -23,10 +22,10 @@
     <div class="large-3 forNav top-bar-right">
         <nav class="sticky-container" data-sticky-container>
             <div class="sticky" data-sticky data-anchor="exampleId" data-sticky-on="large">
-                <ul class="vertical menu" data-magellan>
-                    <li id="firstButtonNav"><a href="#first">Top</a></li>
-                    <li id="secondButtonNav"><a href="#second">Search</a></li>
-                    <li id="fifthButtonNav"><a href="#fifth">Liquor Store Locations</a></li>
+                <ul class="vertical menu" data-magellan data-offset="-25">
+                    <li id="firstButtonNav"><a href="#first" class="searchColorNav">Top</a></li>
+                    <li id="secondButtonNav"><a href="#second" class="searchColorNav">Search</a></li>
+                    <li id="fifthButtonNav"><a href="#fifth" class="searchColorNav">Liquor Store Locations</a></li>
                 </ul>
             </div>
         </nav>
@@ -38,16 +37,18 @@
             <!-- <a href="index.html" target="_blank"><img src="assets/images/image.png" alt="MixologyMust"></a> -->
         </div>
         <!-- Container 1 - For search bars and buttons-->
-        <div>
+        <div id="second" data-magellan-target="second">
             <div class="row row1">
-                <div class="small-12 medium-6 large-6 column forDivOne" id="second" data-magellan-target="second">
+                <div class="small-12 medium-6 large-6 column forDivOne">
                     <form>
                         <h3>Search by Drink: </h3>
                         <br>
                         <input type="search" placeholder="Drink Name" id="search-drink">
-                        <div data-magellan>
+                        <div data-magellan data-offset="-25">
                             <button type="button" class="button" id="buttonSearchDrink"
-                            id="secondButtonNav"><a href="#fourth">Search</a></button>
+                            id="secondButtonNav">
+                                <a href="#fourth" class="searchColor">Search</a>
+                            </button>
                         </div>
                         <br>
                         <h3>Add Ingredient to List: </h3>
@@ -64,7 +65,16 @@
                         <div id="displayIngredients">
                         </div>
                     </div>
+                    <button type="button" class="button" id="buttonSearchIngredient"
+                    id="secondButtonNav">
+                        <a href="#fourth" class="searchColor">Search</a>
+                    </button>
+                    <button type="button" class="button" id="clearButton"
+                    id="secondButtonNav">Clear</button>
                 </div>
+            </div>
+            <div class="row row2">
+
             </div>
         </div>
     </div>
@@ -77,7 +87,7 @@
     <div class="parallax1">
         <div class="row rowForMapWhole" id="fifth" data-magellan-target="fifth">
             <div class="small-12 medium-12 large-12 columns">
-                <div class="row">
+                <div class="row rowLiquor">
                     <h2 id="forHeaderLiquor">Find a Liquor Store Near You!</h3>
                 </div>
                 <div class="row rowForMap">
@@ -87,23 +97,11 @@
             </div>
         </div>
     </div>
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <!-- Modal content -->
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <div id="modalDrinkInfo">
-                <h3 id="modalDrinkName"></h3>
-                <img id="modalDrinkImg">
-                <ul id="modalDrinkIngredients"></ul>
-                <p id ="modalDrinkInstructions"></p>
-            </div>
-        </div>
-    </div>
     <script type="text/javascript" src="assets/javascript/vendor/jquery.js"></script>
     <script type="text/javascript" src="assets/javascript/vendor/what-input.js"></script>
     <script type="text/javascript" src="assets/javascript/vendor/foundation.js"></script>
     <script type="text/javascript" src="assets/javascript/appforFoundation.js"></script>
+    <script type="text/javascript" src="assets/javascript/appForMap.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
 </body>
 
