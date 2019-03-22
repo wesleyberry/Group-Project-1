@@ -1,5 +1,4 @@
 $(document).ready(function () {
-<<<<<<< HEAD
 
 
 
@@ -20,11 +19,9 @@ if (currentAge >= 21) {
 $("#submit-age").on("click", function(event) {
     checkAge();
 })
-=======
     $(window).scroll(function(){
         $("#forTitle").css("opacity", 1 - $(window).scrollTop() / 500);
       });
->>>>>>> master
 
     function makeDrinkCards(drinkResults) {
         for (var i = 0; i < drinkResults.length; i++) {
@@ -223,7 +220,6 @@ $("#submit-age").on("click", function(event) {
             })
             .then(function (response) {
                 var drinkResults = response;
-<<<<<<< HEAD
                 console.log(drinkResults);
                 //IF NO SEARCH RESULTS
                 if (response.drinks != null) {
@@ -234,9 +230,7 @@ $("#submit-age").on("click", function(event) {
                     $(".row.forDivThree").append(noResults);
                 }
                     
-=======
                 shuffleCards(drinkResults.drinks);
->>>>>>> master
                 // makeDrinkCards(drinkResults.drinks);
                 
             });
@@ -294,18 +288,15 @@ $("#submit-age").on("click", function(event) {
                 //item.text(ingredientList[i]);
                 //$("#modalDrinkIngredients").append(item);
             
-<<<<<<< HEAD
         //}
         //$('#modalDrinkInstructions').text(drink.strInstructions);
         //modal.style.display = "block";
     //}
-=======
-        }
-        $('#modalDrinkInstructions').text(drink.strInstructions);
-        modal.style.display = "block";
-    }
+    //     }
+    //     $('#modalDrinkInstructions').text(drink.strInstructions);
+    //     modal.style.display = "block";
+    // }
     var userIngredients = [];
->>>>>>> master
     $("#buttonAddIngredient").on("click", function(event) {
         event.preventDefault();
         var ingredient = $("#add-ingredient").val().trim();
