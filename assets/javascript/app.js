@@ -66,14 +66,15 @@ $(document).ready(function () {
                     modal.style.display = "none";
                 }
             }
-
         }
     }
     function makeDrinkCards1(drinkResults) {
         for (var i = 0; i < 4; i++) { 
             var drink = drinkResults[i];
             var firstDiv = $("<div>").addClass("small-6 medium-3 large-3 columns");
-            var secondDiv = $("<div>").addClass("card");
+            var secondDiv = $("<div>").addClass("card cardFont");
+            var overlayDiv = $("<div>").addClass("overlay").attr("id", "instructions");
+            var ingDiv = $("<p>");
             var thirdDiv = $("<div>").addClass("card-divider");
             var firstHeader = $("<h3>").attr("id", "name").text(drink.strDrink);
             var fourthDiv = $("<div>").addClass("card-section").attr("id", "photo");
@@ -87,9 +88,9 @@ $(document).ready(function () {
             var seventhDiv = $("<div>").addClass("dropdown-pane").attr("data-position", "top");
             seventhDiv.attr("data-alignment", "center").attr("id", "example-dropdown-top-center" + (i+1));
             seventhDiv.attr("data-dropdown", "").attr("data-auto-focus", "true");
-            var eighthDiv = $("<div>").attr("id", "instructions");
             var newOl = $("<ol>");
             // var newP = $("<p>").text(drink.strInstructions);
+            var headInst = $("<h3>").text("Instructions: ").addClass("instStyle");
             var instructions = $("<li>").text(drink.strInstructions);
 
             for (var ingIndex = 1; ingIndex <= 15; ingIndex++) {
@@ -107,47 +108,44 @@ $(document).ready(function () {
             newOl.append(instructions);
             thirdDiv.append(firstHeader);
             fourthDiv.append(newImg);
-            eighthDiv.append(newOl);
-            seventhDiv.append(eighthDiv);
+            // eighthDiv.append(newOl);
+            // seventhDiv.append(eighthDiv);
             sixthDiv.append(secondHeader);
             sixthDiv.append(newUl);
             fifthDiv.append(sixthDiv);
-            fifthDiv.append(newButton);
+            // more.appendTo(fifthDiv);
+            // fifthDiv.append(newButton);
             fifthDiv.append(seventhDiv);
             secondDiv.append(thirdDiv);
             secondDiv.append(fourthDiv);
             secondDiv.append(fifthDiv);
+            overlayDiv.append(ingDiv);
+            overlayDiv.append(instructions);
+            overlayDiv.prepend(headInst);
+            secondDiv.append(overlayDiv);
             firstDiv.append(secondDiv);
             $(".row.forDivThree").append(firstDiv);
         }
     }
-
-    function makeDrinkCardsIngredients(drinkResults) {
-        for (var i = 0; i < drinkResults.length; i++) {
-            var drink = drinkResults[i];
-            var drinkCard = $("<div>");
-            drinkCard.addClass("drinkCard");
-            $(".row.forDivThree").append(drinkCard);
-            var drinkName = $("<h3>").text(drink.strDrink);
-            drinkCard.append(drinkName);
-            var drinkImg = $("<img>").attr("src", drink.strDrinkThumb);
-            drinkCard.append(drinkImg);
-
-            var expandButton = $("<button>");
-            expandButton.addClass("expand");
-            expandButton.text("expand");
-            expandButton.attr("data-expand", "expand");
-            drinkCard.append(expandButton);
-
-            $(".expand").on("click", function (event) {
-
-            })
-
-        }
-    };
-
-
-
+    // function makeDrinkCardsIngredients(drinkResults) {
+    //     for (var i = 0; i < drinkResults.length; i++) {
+    //         var drink = drinkResults[i];
+    //         var drinkCard = $("<div>");
+    //         drinkCard.addClass("drinkCard");
+    //         $(".row.forDivThree").append(drinkCard);
+    //         var drinkName = $("<h3>").text(drink.strDrink);
+    //         drinkCard.append(drinkName);
+    //         var drinkImg = $("<img>").attr("src", drink.strDrinkThumb);
+    //         drinkCard.append(drinkImg);
+    //         var expandButton = $("<button>");
+    //         expandButton.addClass("expand");
+    //         expandButton.text("expand");
+    //         expandButton.attr("data-expand", "expand");
+    //         drinkCard.append(expandButton);
+    //         $(".expand").on("click", function (event) {
+    //         })
+    //     }
+    // };
     $("#buttonSearchDrink").on("click", function (event) {
         event.preventDefault();
         $(".row.forDivThree").empty();
@@ -163,10 +161,7 @@ $(document).ready(function () {
                 makeDrinkCards1(drinkResults.drinks);
             });
         console.log(queryDrinkURL);
-
-
     });
-
     $("#buttonSearchIngredient").on("click", function (event) {
         event.preventDefault();
         $(".row.forDivThree").empty();
@@ -192,25 +187,20 @@ $(document).ready(function () {
 
             })
     });
-
-    /*
-    $("#buttonAddIngredient").on("click", function (event) {
-        event.preventDefault();
-        $(".row.forDivThree").empty();
-        var ingredientQuery = $("#search-ingredient").val().trim();
-        var queryIngredientURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredientQuery;
-        $.ajax({
-                url: queryIngredientURL,
-                method: "GET"
-            })
-            .then(function (response) {
-                var drinkResults = response;
-                makeDrinkCardsIngredients(drinkResults.drinks);
-            })
-
-
-    });*/
-
+    // $("#buttonAddIngredient").on("click", function (event) {
+    //     event.preventDefault();
+    //     $(".row.forDivThree").empty();
+    //     var ingredientQuery = $("#search-ingredient").val().trim();
+    //     var queryIngredientURL = "https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=" + ingredientQuery;
+    //     $.ajax({
+    //             url: queryIngredientURL,
+    //             method: "GET"
+    //         })
+    //         .then(function (response) {
+    //             var drinkResults = response;
+    //             makeDrinkCardsIngredients(drinkResults.drinks);
+    //         })
+    // });
     function showModal(drink, ingredientList) {
         var modal = document.getElementById('myModal');
         var span = document.getElementsByClassName("close")[0];
@@ -224,14 +214,10 @@ $(document).ready(function () {
                 item.text(ingredientList[i]);
                 $("#modalDrinkIngredients").append(item);
             
-
         }
         $('#modalDrinkInstructions').text(drink.strInstructions);
         modal.style.display = "block";
-
     }
-
-
     var userIngredients = [];
     $("#buttonAddIngredient").on("click", function(event) {
         event.preventDefault();
