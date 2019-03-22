@@ -12,7 +12,6 @@
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFtzSO-5M7RAhGkouX3IzEfJ5_uDGCcbY&libraries=places&callback=initMap"
         async defer></script>
-    <script type="text/javascript" src="assets/javascript/appForMap.js"></script>
     <title>Mixology Must</title>
 </head>
 
@@ -21,11 +20,10 @@
     <div class="large-3 forNav top-bar-right">
         <nav class="sticky-container" data-sticky-container>
             <div class="sticky" data-sticky data-anchor="exampleId" data-sticky-on="large">
-                <ul class="vertical menu" data-magellan>
-                    <li id="firstButtonNav"><a href="#first">Top</a></li>
-                    <li id="secondButtonNav"><a href="#second">Search</a></li>
-                    <li id="fourthButtonNav"><a href="#fourth">Recommendations</a></li>
-                    <li id="fifthButtonNav"><a href="#fifth">Liquor Store Locations</a></li>
+                <ul class="vertical menu" data-magellan data-offset="-25">
+                    <li id="firstButtonNav"><a href="#first" class="searchColorNav">Top</a></li>
+                    <li id="secondButtonNav"><a href="#second" class="searchColorNav">Search</a></li>
+                    <li id="fifthButtonNav"><a href="#fifth" class="searchColorNav">Liquor Store Locations</a></li>
                 </ul>
             </div>
         </nav>
@@ -37,19 +35,19 @@
             <!-- <a href="index.html" target="_blank"><img src="assets/images/image.png" alt="MixologyMust"></a> -->
         </div>
         <!-- Container 1 - For search bars and buttons-->
-        <div>
+        <div id="second" data-magellan-target="second">
             <div class="row row1">
-                <div class="small-12 medium-6 large-6 column forDivOne" id="second" data-magellan-target="second">
+                <div class="small-12 medium-6 large-6 column forDivOne">
                     <form>
                         <h3>Search by Drink: </h3>
                         <br>
                         <input type="search" placeholder="Drink Name" id="search-drink">
-                        <button type="button" class="button" id="buttonSearchDrink">Search</button>
-                        <br>
-                        <h3>Search by Ingredient: </h3>
-                        <br>
-                        <input type="search" placeholder="Ex: Whiskey, bitters, sugar, water" id="search-ingredient">
-                        <button type="button" class="button" id="buttonSearchIngredient">Search</button>
+                        <div data-magellan data-offset="-25">
+                            <button type="button" class="button" id="buttonSearchDrink"
+                            id="secondButtonNav">
+                                <a href="#fourth" class="searchColor">Search</a>
+                            </button>
+                        </div>
                         <br>
                         <h3>Add Ingredient to List: </h3>
                         <br>
@@ -59,196 +57,36 @@
                     </form>
                 </div>
                 <!-- Container 2 - for displaying ingredients-->
-                <div class="row align-right">
-                    <div class="small-12 medium-6 large-6 column forDivTwo" id="third" data-magellan-target="third">
-                        <h3>Ingredients List: </h3>
-                        <div>
-                            <ul id="displayIngredients">
-                            </ul>
+                <div class="small-12 medium-6 large-6 column forDivTwo" id="third" data-magellan-target="third">
+                    <h3>Ingredients List: </h3>
+                    <div>
+                        <div id="displayIngredients">
+                                <button type = "button" class = "button" id = "addIngredientSearch">We be searching everything</button>
                         </div>
                     </div>
+                    <button type="button" class="button" id="buttonSearchIngredient"
+                    id="secondButtonNav">
+                        <a href="#fourth" class="searchColor">Search</a>
+                    </button>
+                    <button type="button" class="button" id="clearButton"
+                    id="secondButtonNav">Clear</button>
                 </div>
+            </div>
+            <div class="row row2">
+
             </div>
         </div>
     </div>
     <!-- Container 3 - for displaying cards -->
-    <div class="behindCards">
-        <div class="row forDivThree" id="fourth" data-magellan-target="fourth">
-            <!-- <div class="small-6 medium-3 large-3 columns">
-                <div class="card">
-                    <div class="card-divider">
-                        <h3 id="name"></h3>
-                    </div>
-                    <div class="card-section" id="photo">
-                        <img src="http://chittagongit.com//images/small-icon-images/small-icon-images-11.jpg">
-                    </div>
-                    <div class="card-section">
-                        <div id="ingredients">
-                            <h4>Ingredients:</h4>
-                            <ul>
-                                <li id="ingredient-1"><span id="measurement-1">2 oz</span> Blanco Tequila</li>
-                                <li id="ingredient-2"><span id="measurement-2">1 oz</span> Fresh Lime Juice</li>
-                                <li id="ingredient-3"><span id="measurement-3">3/4</span> oz Orange Liqueur</li>
-                                <li id="ingredient-4"><span id="measurement-4"></span></li>
-                                <li id="ingredient-5"><span id="measurement-5"></span></li>
-                                <li id="ingredient-6"><span id="measurement-6"></span></li>
-                                <li id="ingredient-7"><span id="measurement-7"></span></li>
-                            </ul>
-                        </div>
-                        <button class="button" type="button"
-                            data-toggle="example-dropdown-top-center1">Instructions</button>
-                        <div class="dropdown-pane" data-position="top" data-alignment="center"
-                            id="example-dropdown-top-center1" data-dropdown data-auto-focus="true">
-                            <div id="instructions">
-                                <ol>
-                                    <li>Salt the rim of the glass</li>
-                                    <li>Add lime to rim as garnish</li>
-                                    <li>Serve on ice</li>
-                                </ol>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="small-6 medium-3 large-3 columns">
-                <div class="card">
-                    <div class="card-divider">
-                        <h3 id="name">Margarita</h3>
-                    </div>
-                    <div class="card-section" id="photo">
-                        <img src="http://chittagongit.com//images/small-icon-images/small-icon-images-11.jpg">
-                    </div>
-                    <div class="card-section">
-                        <div id="ingredients">
-                            <h4>Ingredients:</h4>
-                            <ul>
-                                <li id="ingredient-1"><span id="measurement-1">2 oz</span> Blanco Tequila</li>
-                                <li id="ingredient-2"><span id="measurement-2">1 oz</span> Fresh Lime Juice</li>
-                                <li id="ingredient-3"><span id="measurement-3">3/4</span> oz Orange Liqueur</li>
-                                <li id="ingredient-4"><span id="measurement-4"></span></li>
-                                <li id="ingredient-5"><span id="measurement-5"></span></li>
-                                <li id="ingredient-6"><span id="measurement-6"></span></li>
-                                <li id="ingredient-7"><span id="measurement-7"></span></li>
-                            </ul>
-                        </div>
-                        <button class="button" type="button"
-                            data-toggle="example-dropdown-top-center2">Instructions</button>
-                        <div class="dropdown-pane" data-position="top" data-alignment="center"
-                            id="example-dropdown-top-center2" data-dropdown data-auto-focus="true">
-                            <div id="instructions">
-                                <ol>
-                                    <li>Salt the rim of the glass</li>
-                                    <li>Add lime to rim as garnish</li>
-                                    <li>Serve on ice</li>
-                                </ol>
-                            </div>
-                        </div>
-                        <button class="button" type="button" data-toggle="example-dropdown-bottom-center2">Nutritional
-                            Facts</button>
-                        <div class="dropdown-pane" data-position="bottom" data-alignment="center"
-                            id="example-dropdown-bottom-center2" data-dropdown data-auto-focus="true">
-                            <div id="nutrition">
-                                Nutritional Facts:
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="small-6 medium-3 large-3 columns">
-                <div class="card">
-                    <div class="card-divider">
-                        <h3 id="name">Margarita</h3>
-                    </div>
-                    <div class="card-section" id="photo">
-                        <img src="http://chittagongit.com//images/small-icon-images/small-icon-images-11.jpg">
-                    </div>
-                    <div class="card-section">
-                        <div id="ingredients">
-                            <h4>Ingredients:</h4>
-                            <ul>
-                                <li id="ingredient-1"><span id="measurement-1">2 oz</span> Blanco Tequila</li>
-                                <li id="ingredient-2"><span id="measurement-2">1 oz</span> Fresh Lime Juice</li>
-                                <li id="ingredient-3"><span id="measurement-3">3/4</span> oz Orange Liqueur</li>
-                                <li id="ingredient-4"><span id="measurement-4"></span></li>
-                                <li id="ingredient-5"><span id="measurement-5"></span></li>
-                                <li id="ingredient-6"><span id="measurement-6"></span></li>
-                                <li id="ingredient-7"><span id="measurement-7"></span></li>
-                            </ul>
-                        </div>
-                        <button class="button" type="button"
-                            data-toggle="example-dropdown-top-center3">Instructions</button>
-                        <div class="dropdown-pane" data-position="top" data-alignment="center"
-                            id="example-dropdown-top-center3" data-dropdown data-auto-focus="true">
-                            <div id="instructions">
-                                <ol>
-                                    <li>Salt the rim of the glass</li>
-                                    <li>Add lime to rim as garnish</li>
-                                    <li>Serve on ice</li>
-                                </ol>
-                            </div>
-                        </div>
-                        <button class="button" type="button" data-toggle="example-dropdown-bottom-center3">Nutritional
-                            Facts</button>
-                        <div class="dropdown-pane" data-position="bottom" data-alignment="center"
-                            id="example-dropdown-bottom-center3" data-dropdown data-auto-focus="true">
-                            <div id="nutrition">
-                                Nutritional Facts:
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="small-6 medium-3 large-3 columns">
-                <div class="card">
-                    <div class="card-divider">
-                        <h3 id="name">Margarita</h3>
-                    </div>
-                    <div class="card-section" id="photo">
-                        <img src="http://chittagongit.com//images/small-icon-images/small-icon-images-11.jpg">
-                    </div>
-                    <div class="card-section">
-                        <div id="ingredients">
-                            <h4>Ingredients:</h4>
-                            <ul>
-                                <li id="ingredient-1"><span id="measurement-1">2 oz</span> Blanco Tequila</li>
-                                <li id="ingredient-2"><span id="measurement-2">1 oz</span> Fresh Lime Juice</li>
-                                <li id="ingredient-3"><span id="measurement-3">3/4</span> oz Orange Liqueur</li>
-                                <li id="ingredient-4"><span id="measurement-4"></span></li>
-                                <li id="ingredient-5"><span id="measurement-5"></span></li>
-                                <li id="ingredient-6"><span id="measurement-6"></span></li>
-                                <li id="ingredient-7"><span id="measurement-7"></span></li>
-                            </ul>
-                        </div>
-                        <button class="button" type="button"
-                            data-toggle="example-dropdown-top-center4">Instructions</button>
-                        <div class="dropdown-pane" data-position="top" data-alignment="center"
-                            id="example-dropdown-top-center4" data-dropdown data-auto-focus="true">
-                            <div id="instructions">
-                                <ol>
-                                    <li>Salt the rim of the glass</li>
-                                    <li>Add lime to rim as garnish</li>
-                                    <li>Serve on ice</li>
-                                </ol>
-                            </div>
-                        </div>
-                        <button class="button" type="button" data-toggle="example-dropdown-bottom-center4">Nutritional
-                            Facts</button>
-                        <div class="dropdown-pane" data-position="bottom" data-alignment="center"
-                            id="example-dropdown-bottom-center4" data-dropdown data-auto-focus="true">
-                            <div id="nutrition">
-                                Nutritional Facts:
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div> -->
+    <div class="behindCards" id="fourth" data-magellan-target="fourth">
+        <div class="row forDivThree">
         </div>
     </div>
     <!-- Container 4 - This will hold the map -->
     <div class="parallax1">
         <div class="row rowForMapWhole" id="fifth" data-magellan-target="fifth">
             <div class="small-12 medium-12 large-12 columns">
-                <div class="row">
+                <div class="row rowLiquor">
                     <h2 id="forHeaderLiquor">Find a Liquor Store Near You!</h3>
                 </div>
                 <div class="row rowForMap">
@@ -258,6 +96,7 @@
             </div>
         </div>
     </div>
+<<<<<<< HEAD
 
     <!-- The Modal -->
     <div id="ageModal" class="modal">
@@ -283,10 +122,13 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+=======
+>>>>>>> master
     <script type="text/javascript" src="assets/javascript/vendor/jquery.js"></script>
     <script type="text/javascript" src="assets/javascript/vendor/what-input.js"></script>
     <script type="text/javascript" src="assets/javascript/vendor/foundation.js"></script>
     <script type="text/javascript" src="assets/javascript/appforFoundation.js"></script>
+    <script type="text/javascript" src="assets/javascript/appForMap.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
     `
 
