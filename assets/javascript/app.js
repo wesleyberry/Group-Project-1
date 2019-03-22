@@ -1,10 +1,7 @@
 $(document).ready(function () {
-<<<<<<< HEAD
     $(window).scroll(function(){
         $("#forTitle").css("opacity", 1 - $(window).scrollTop() / 500);
       });
-=======
->>>>>>> master
 
     function makeDrinkCards(drinkResults) {
         for (var i = 0; i < drinkResults.length; i++) {
@@ -111,7 +108,6 @@ $(document).ready(function () {
                     newUl.append(item);
                 }
             }
-<<<<<<< HEAD
             var more = $("<button>");
             more.addClass("more buttonStyle");
             more.text("More");
@@ -141,8 +137,6 @@ $(document).ready(function () {
                     modal.style.display = "none";
                 }
             }
-=======
->>>>>>> master
             newOl.append(instructions);
             thirdDiv.append(firstHeader);
             fourthDiv.append(newImg);
