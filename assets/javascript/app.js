@@ -1,4 +1,7 @@
 $(document).ready(function () {
+    $(window).scroll(function(){
+        $("#forTitle").css("opacity", 1 - $(window).scrollTop() / 500);
+      });
 
     function makeDrinkCards(drinkResults) {
         for (var i = 0; i < drinkResults.length; i++) {
@@ -103,6 +106,35 @@ $(document).ready(function () {
                     var item = $("<li>");
                     item.text(measure + " " + ingredient);
                     newUl.append(item);
+                }
+            }
+            var more = $("<button>");
+            more.addClass("more buttonStyle");
+            more.text("More");
+            more.data('drink', drink);
+            more.data('ingredientList', ingredientList);
+
+            var modal = document.getElementById('myModal');
+            var span = document.getElementsByClassName("close")[0];
+
+
+            // $(".drinkInfo").append(drinkImg);
+            //$(".drinkInfo").append(instructions);
+
+            more.on("click", function () {
+                var buttonDrink = $(this).data('drink');
+                var buttonIngredients = $(this).data('ingredientList');
+                showModal(buttonDrink, buttonIngredients);
+
+            })
+
+            // span.onclick = function () {
+            //     modal.style.display = "none";
+            // }
+
+            window.onclick = function (event) {
+                if (event.target == modal) {
+                    modal.style.display = "none";
                 }
             }
             newOl.append(instructions);
