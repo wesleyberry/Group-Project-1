@@ -198,6 +198,7 @@ $(document).ready(function () {
     // };
     $("#buttonSearchDrink").on("click", function (event) {
         event.preventDefault();
+        $(".behindCards").css({"background-size": "contain"});
         $(".row.forDivThree").empty();
         $(".row.forDivThree1").empty();
         var drinkQuery = $("#search-drink").val().trim();
