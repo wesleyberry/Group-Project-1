@@ -41,17 +41,18 @@
             <div class="row row1">
                 <div class="small-12 medium-6 large-6 column forDivOne">
                     <form>
-                        <h3>Search by Drink: </h3>
+                        <h3 class="cardFont">Search by Drink: </h3>
                         <br>
                         <input type="search" placeholder="Drink Name" id="search-drink">
                         <div data-magellan data-offset="-25">
-                            <button type="button" class="button" id="buttonSearchDrink"
-                            id="secondButtonNav">
-                                <a href="#fourth" class="searchColor">Search</a>
-                            </button>
+                            <a href="#fourth"  class="searchColor">
+                                <button type="button" class="button" id="buttonSearchDrink" class="cardFont">
+                                    Search
+                                </button>
+                            </a>
                         </div>
                         <br>
-                        <h3>Add Ingredient to List: </h3>
+                        <h3 class="cardFont">Add Ingredient to List: </h3>
                         <br>
                         <input type="search" placeholder="Sweet and Sour" id="add-ingredient">
                         <button type="button" class="button" id="buttonAddIngredient">Add Ingredient</button>
@@ -60,18 +61,17 @@
                 </div>
                 <!-- Container 2 - for displaying ingredients-->
                 <div class="small-12 medium-6 large-6 column forDivTwo" id="third" data-magellan-target="third">
-                    <h3>Ingredients List: </h3>
-                    <div>
+                    <h3 class="cardFont">Ingredients List: </h3>
                         <div id="displayIngredients">
-                                <button type = "button" class = "button" id = "addIngredientSearch">We be searching everything</button>
                         </div>
+                    <div class="searchAndClear" data-magellan>
+                        <a href="#fourth1"  class="searchColor">
+                            <button type="button" class="button " id="buttonSearchIngredient">
+                                Search
+                            </button>
+                        </a>
+                        <button type="button" class="button" id="clearButton">Clear</button>
                     </div>
-                    <button type="button" class="button" id="buttonSearchIngredient"
-                    id="secondButtonNav">
-                        <a href="#fourth" class="searchColor">Search</a>
-                    </button>
-                    <button type="button" class="button" id="clearButton"
-                    id="secondButtonNav">Clear</button>
                 </div>
             </div>
             <div class="row row2">
@@ -80,8 +80,10 @@
         </div>
     </div>
     <!-- Container 3 - for displaying cards -->
-    <div class="behindCards" id="fourth" data-magellan-target="fourth">
+    <div class="behindCards" id="fourth" data-magellan-target="fourth" id="fourth1" data-magellan-target="fourth1">
         <div class="row forDivThree">
+        </div>
+        <div class="row forDivThree1">
         </div>
     </div>
     <!-- Container 4 - This will hold the map -->

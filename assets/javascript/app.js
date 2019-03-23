@@ -75,16 +75,19 @@ $(document).ready(function () {
         for (var i = 0; i < 8; i++) { 
             var drink = drinkResults[i];
             var firstDiv = $("<div>").addClass("small-6 medium-3 large-3 columns");
+            if ((i == 3) || (i == 5) ||(i == 7) || (i == 1)) {
+                firstDiv.addClass("end");
+            }
             var secondDiv = $("<div>").addClass("card cardFont");
             var overlayDiv = $("<div>").addClass("overlay").attr("id", "instructions");
             var ingDiv = $("<p>");
             var thirdDiv = $("<div>").addClass("card-divider");
-            var firstHeader = $("<h3>").attr("id", "name").text(drink.strDrink);
+            var firstHeader = $("<h3>").attr("id", "name").text(drink.strDrink).addClass("cardFont");
             var fourthDiv = $("<div>").addClass("card-section").attr("id", "photo");
             var newImg = $("<img>").attr("src", drink.strDrinkThumb);
             var fifthDiv = $("<div>").addClass("card-section");
             var sixthDiv = $("<div>").attr("id", "ingredients");
-            var secondHeader = $("<h4>").text("Ingredients: ");
+            var secondHeader = $("<h4>").text("Ingredients: ").addClass("cardFont");
             var newUl = $("<ul>");
             var newButton = $("<button>").addClass("button").attr("type", "button");
             newButton.attr("data-toggle", "example-dropdown-top-center" + (i+1)).text("Instructions");
@@ -112,7 +115,7 @@ $(document).ready(function () {
             more.addClass("more buttonStyle");
             more.text("More");
             more.data('drink', drink);
-            more.data('ingredientList', ingredientList);
+            // more.data('ingredientList', ingredientList);
 
             var modal = document.getElementById('myModal');
             var span = document.getElementsByClassName("close")[0];
@@ -156,7 +159,11 @@ $(document).ready(function () {
             overlayDiv.prepend(headInst);
             secondDiv.append(overlayDiv);
             firstDiv.append(secondDiv);
-            $(".row.forDivThree").append(firstDiv);
+            if((i == 0) || (i == 1) || (i == 2) || (i ==3)) {
+                $(".row.forDivThree").append(firstDiv);
+            } else {
+                $(".row.forDivThree1").append(firstDiv);
+            }
         }
     }
     // Randomizes the cards so not the same 8 appear every time.
@@ -192,6 +199,7 @@ $(document).ready(function () {
     $("#buttonSearchDrink").on("click", function (event) {
         event.preventDefault();
         $(".row.forDivThree").empty();
+        $(".row.forDivThree1").empty();
         var drinkQuery = $("#search-drink").val().trim();
         var queryDrinkURL = "https://www.thecocktaildb.com/api/json/v2/2345454/search.php?s=" + drinkQuery;
         $.ajax({
