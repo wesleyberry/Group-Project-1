@@ -6,10 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display" rel="stylesheet">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/foundation.css">
     <link rel="stylesheet" type="text/css" href="assets/css/app.css">
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <link rel="stylesheet" type="text/css" href="assets/css/style.css">
     <script
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBFtzSO-5M7RAhGkouX3IzEfJ5_uDGCcbY&libraries=places&callback=initMap"
@@ -92,18 +90,48 @@
                     <h2 id="forHeaderLiquor">Find a Liquor Store Near You!</h3>
                 </div>
                 <div class="row rowForMap">
-                    <div class="small-12 medium-12 large-12 columns" id="putMapHere">    
+                    <div class="small-12 medium-12 large-12 columns" id="putMapHere">
                     </div>
                 </div>
             </div>
         </div>
     </div>
+
+    <!-- The Modal -->
+    <div id="ageModal" class="modal">
+        <!-- Modal content -->
+        <div class="modal-content">
+            <span class="close"></span>
+            <div id="modalDrinkInfo">
+                <h3 id="modalDrinkName">Enter your date of birth:</h3>
+                <input type="date" id="bday">
+
+                <input type="submit" id="submit-age">
+                
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
     <script type="text/javascript" src="assets/javascript/vendor/jquery.js"></script>
     <script type="text/javascript" src="assets/javascript/vendor/what-input.js"></script>
     <script type="text/javascript" src="assets/javascript/vendor/foundation.js"></script>
     <script type="text/javascript" src="assets/javascript/appforFoundation.js"></script>
     <script type="text/javascript" src="assets/javascript/appForMap.js"></script>
     <script type="text/javascript" src="assets/javascript/app.js"></script>
+    `
+
+
+
+
 </body>
 
 </html>

@@ -1,4 +1,24 @@
 $(document).ready(function () {
+
+
+
+function checkAge (ageInput) {
+var ageModal = $("#ageModal");
+var ageInput = $("#bday").val();
+var ageObject = new Date(ageInput);     
+var currentAge = moment().diff(ageObject, "years");    
+if (currentAge >= 21) {
+    ageModal.css("display", "none");
+} else {
+    $(".modal-content").empty();
+    var tooYoung = $("<h3>");
+    tooYoung.text("You must be at least 21 years of age to enter site.");
+    $(".modal-content").append(tooYoung);
+}};
+
+$("#submit-age").on("click", function(event) {
+    checkAge();
+})
     $(window).scroll(function(){
         $("#forTitle").css("opacity", 1 - $(window).scrollTop() / 500);
       });
@@ -200,9 +220,19 @@ $(document).ready(function () {
             })
             .then(function (response) {
                 var drinkResults = response;
+                console.log(drinkResults);
+                //IF NO SEARCH RESULTS
+                if (response.drinks != null) {
+                    makeDrinkCards1(drinkResults.drinks);
+                } else {
+                    var noResults = $("<h3>");
+                    noResults.text("No results found.");
+                    $(".row.forDivThree").append(noResults);
+                }
+                    
                 shuffleCards(drinkResults.drinks);
                 // makeDrinkCards(drinkResults.drinks);
-                makeDrinkCards1(drinkResults.drinks);
+                
             });
         console.log(queryDrinkURL);
     });
@@ -245,23 +275,27 @@ $(document).ready(function () {
     //             makeDrinkCardsIngredients(drinkResults.drinks);
     //         })
     // });
-    function showModal(drink, ingredientList) {
-        var modal = document.getElementById('myModal');
-        var span = document.getElementsByClassName("close")[0];
+    //function showModal(drink, ingredientList) {
+        //var modal = document.getElementById('myModal');
+        //var span = document.getElementsByClassName("close")[0];
 
-        $('#modalDrinkName').text(drink.strDrink);
-        $('#modalDrinkImg').attr("src", drink.strDrinkThumb);
-        $("#modalDrinkIngredients").empty();
-        for (var i = 0; i < ingredientList.length; i++) {
+        //$('#modalDrinkName').text(drink.strDrink);
+        //$('#modalDrinkImg').attr("src", drink.strDrinkThumb);
+        //$("#modalDrinkIngredients").empty();
+        //for (var i = 0; i < ingredientList.length; i++) {
             
-                var item = $("<li>");
-                item.text(ingredientList[i]);
-                $("#modalDrinkIngredients").append(item);
+                //var item = $("<li>");
+                //item.text(ingredientList[i]);
+                //$("#modalDrinkIngredients").append(item);
             
-        }
-        $('#modalDrinkInstructions').text(drink.strInstructions);
-        modal.style.display = "block";
-    }
+        //}
+        //$('#modalDrinkInstructions').text(drink.strInstructions);
+        //modal.style.display = "block";
+    //}
+    //     }
+    //     $('#modalDrinkInstructions').text(drink.strInstructions);
+    //     modal.style.display = "block";
+    // }
     var userIngredients = [];
     $("#buttonAddIngredient").on("click", function(event) {
         event.preventDefault();
