@@ -329,7 +329,9 @@ $("#submit-age").on("click", function(event) {
       var ingredientQuery = userIngredients;
     $("#buttonSearchIngredient").on("click", function(event) {
         event.preventDefault();
+        $(".behindCards").css({"background-size": "contain"});
         $(".row.forDivThree").empty();
+        $(".row.forDivThree1").empty();
         console.log(userIngredients);
         console.log(ingredientQuery);
         var queryIngredientURL = "https://www.thecocktaildb.com/api/json/v2/2345454/filter.php?i=" + ingredientQuery;
