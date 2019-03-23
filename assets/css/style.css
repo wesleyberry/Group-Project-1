@@ -52,6 +52,9 @@ body {
     background-size: cover;
     overflow-x: hidden;
 }
+.pClass {
+    width: 60px
+}
 .columns {
     padding-right: .5rem;
     padding-left: .5rem;

@@ -277,7 +277,7 @@ $(document).ready(function () {
         var ingredient = $("#add-ingredient").val().trim();
         console.log(ingredient);
         userIngredients.push(ingredient);
-        var newP = $("<p>");
+        var newP = $("<p>").addClass("pClass");
         $(newP).text(ingredient);
         var newDivCallout = $("<div class=callout data-closable>");
         newDivCallout.attr("data-closable");
