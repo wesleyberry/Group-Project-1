@@ -1,13 +1,10 @@
 body {
     font-family: Pona, Georgia, Times, Serif;
-    /* background-color: rgb(83, 83, 83); */
     overflow-x: hidden;
     width: 100%;
     background-color: #533A2B;
 }
-
 .titlePageBackground {
-    /* background: url("../images/photo4.jpg"); */
     background-size: cover;
     display: flex;
     flex-direction: column;
@@ -16,7 +13,6 @@ body {
     background-repeat: no-repeat;
     width: 100vw;
     height: calc(100vh + 20px);
-    /* overflow-x: hidden; */
     background-position: center;
 }
 .callout {
@@ -28,24 +24,21 @@ body {
 }
 .closeButtonStyle {
     max-width: auto;
-    /* width: auto; */
 }
 .firstDiv {
     height: 100vh;
 }
-
 .titleImage {
     position: static;
     z-index: 2 !important;
     margin-left: 30%;
 }
-
 .parallax1 {
     background: url("../images/photo4.jpg");
     z-index: 0;
     position: relative;
     height: 100%;
-    /* Create the parallax scrolling effect */
+    /* Creates the parallax scrolling effect */
     background-attachment: fixed;
     background-position: center;
     background-repeat: no-repeat;
@@ -58,7 +51,6 @@ body {
     padding-right: .5rem;
     padding-left: .5rem;
 }
-
 .card {
     position: relative;
     height: 80vh;
@@ -96,7 +88,6 @@ div.card-section {
 .cardFont {
     font-family: Pona, Georgia, Times, Serif;
 }
-
 .behindCards {
     background-image: url("../images/photo5.jpg");
     background-size: cover;
@@ -104,32 +95,25 @@ div.card-section {
     flex-direction: column;
     background-repeat: repeat;
     width: 100vw;
-    /* overflow-x: hidden; */
     background-position: center;
     min-height: 600px;
 }
-
 #name {
     color: black;
 }
-
 h3 {
     font-size: 1.25rem;
     color: white;
 }
-
 a {
     color: white !important;
 }
-
 .row {
     z-index: 1;
 }
-
 .sticky {
     transform: translateX(83vw);
 }
-
 .row1 {
     background: rgba(00, 00, 00, 0.8);
     width: 100vw;
@@ -138,7 +122,6 @@ a {
     padding-right: 20vw;
     padding-top: 10vh;
     padding-bottom: 10vh;
-
 }
 .row .row {
     margin-right: 0;
@@ -150,27 +133,22 @@ a {
     margin-left: 13%;
     margin-right: 13%;
 }
-
 .rowForMapWhole {
     height: 100%;
 }
-
 .forNav {
     width: 16vw;
     z-index: 3 !important;
     position: relative;
 }
-
 .forDivTwo {
     max-height: 500px;
 }
-
 #displayIngredients {
     overflow-y: auto;
     max-height: 300px;
     margin-top: 5vh;
 }
-
 #firstButtonNav,
 #secondButtonNav,
 #fourthButtonNav,
@@ -180,9 +158,6 @@ a {
     font-size: 1.5em;
     text-align: right;
 }
-
-#fourthButtonNav {}
-
 .forDivThree {
     padding-top:1%;
     margin-top: 1%;
@@ -192,13 +167,10 @@ a {
     padding-top:1%;
     margin-top: 1%;
     margin-bottom: 1%;
-
 }
-
 .forDivThree h3 {
     font-family: Pona, Georgia, Times, Serif;
 }
-
 .forDivTwo,
 .forDivOne,
 .mapDiv {
@@ -213,29 +185,18 @@ a {
     color: white;
     font-family: Pona,Georgia,Times,Serif;
 }
-/* /* .buttonStyle {
-    width: 100%;
-    height: 5vh;
-    background-color: #2ba6cb;
-    /* color: white; */
-    /* font-family: Pona,Georgia,Times,Serif; */
-/* } */
-/* .buttonStyle:hover {
-    background-color: #085168;
-}  */
 .button {
     background-color:white !important;
     color: black !important;
     font-family: Pona,Georgia,Times,Serif;
     border: none;
-    /* padding: 0 0; */
     text-align: center;
     text-decoration: none;
     display: inline-block;
     font-size: 16px;
     margin: 2px 2px;
     cursor: pointer;
-    }
+}
 .button:hover {
     color: white !important;
     background-color:#533A2B !important;
@@ -243,7 +204,6 @@ a {
 }
 .button:hover .searchColor {
     color: white !important;
-    /* background-color:#533A2B !important; */
 }
 .searchColor {
     color: black !important;
@@ -269,79 +229,57 @@ a {
 /* The Modal (background) */
 .modal {
     display: block;
-
     position: fixed;
-
     z-index: 1;
-
     left: 0;
     top: 0;
     width: 100%;
-
     height: 100%;
-
     overflow: auto;
-
     background-color: rgb(0, 0, 0);
-
     background-color: rgba(0, 0, 0, 0.4);
-
 }
-
 /* Modal Content/Box */
 .modal-content {
     background-color: black;
     margin: 15% auto;
-    /* 15% from the top and centered */
     padding: 20px;
     border: 1px solid #888;
     width: 60%;
-    ;
     color: white;
     /* Could be more or less, depending on screen size */
 }
-
 .modal-content h3 {
     font-family: Pona, Georgia, Times, Serif;
     font-size: 190%;
 }
-
 #bday {
     color: white;
     background-color: rgb(0, 0, 0, 0);
     font-size: 170%;
     height: 100%;
 }
-
-
 .close:hover,
 .close:focus {
     color: black;
     text-decoration: none;
     cursor: pointer;
 }
-
 .drinkCard {
     width: 250px;
     margin: 6px;
     background-color: antiquewhite;
 }
-
 .drinkCard img {
     height: 250px;
     width: 250px;
 }
-
-
-
-
 /* Used to view the map */
 @media (min-width: 300px) {
-        .titlePageBackground {
+    .titlePageBackground {
         background-position: 90% 50%;
         overflow-x: hidden;
     }
-
     .forNav {
         visibility: hidden;
         position: fixed;
@@ -354,7 +292,6 @@ a {
         margin-right: 2%;
         margin-top: 1%;
         margin-bottom: 1%;
-        /* margin-right: 10%; */
     }
     .rowForMap {
         margin-left: 4vw;
@@ -373,7 +310,6 @@ a {
         padding-left: 5vw;
         padding-right: 5vw;
     }
-
     #forTitle {
         background-image: url("../images/title.png");
         z-index: 10;
@@ -385,16 +321,13 @@ a {
         height: 300px;
         background-size: contain;
         background-repeat: no-repeat;
-        /* display: flex; */
     }
 }
-
 /* Small devices (landscape phones, 576px and up) */
 @media (min-width: 576px) {
     .titlePageBackground {
         background-position: 90% 50%;
     }
-
     #putMapHere {
         height: 400px;
         width: 90%;
@@ -402,16 +335,13 @@ a {
         margin-right: 5%;
         margin-top: 1%;
         margin-bottom: 1%;
-        /* margin-right: 10%; */
     }
-
     #forTitle {
         margin-top: 450px;
         margin-left: 1%;
         min-width: 95%;
         max-width: 100%;
         height: 400px;
-        /* display: flex; */
     }
     .forDivThree {
         padding-left: 5vw;
@@ -442,26 +372,21 @@ a {
         height: 400px;
         background-size: contain;
         background-repeat: no-repeat;
-        /* display: flex; */
     }
 }
-
 /* Large devices (desktops, 992px and up) */
 @media (min-width: 992px) {
     .titlePageBackground {
         background-position: center;
     }
-
     .columns {
         padding-right: .8rem;
         padding-left: .8rem;
     }
-
     #putMapHere {
         height: 500px;
         width: 90%;
     }
-
     #forTitle {
         margin-top: 290px;
         margin-left: 0;
@@ -471,11 +396,8 @@ a {
         height: 500px;
         background-size: cover;
         background-repeat: no-repeat;
-        /* display: flex; */
     }
-
 }
-
 /* Extra large devices (large desktops, 1200px and up) */
 @media (min-width: 1200px) {
     #forTitle {
@@ -486,17 +408,14 @@ a {
         background-size: cover;
     }
 }
-
 @media (min-width: 1400px) {
     .forNav {
         visibility: visible;
     }
-
     .row1 {
         padding-left: 18vw;
         padding-right: 18vw;
     }
-
     #forTitle {
         margin-top: 15%;
         margin-left: 2%;
