@@ -26,32 +26,7 @@ $("#submit-age").on("click", function(event) {
     function makeDrinkCards(drinkResults) {
         for (var i = 0; i < drinkResults.length; i++) {
 
-/*            var drink = drinkResults[i];
-            var drinkCard = $("<div>");
-            drinkCard.addClass("drinkCard");
-            $(".row.forDivThree").append(drinkCard);
-            var drinkName = $("<h3>").text(drink.strDrink);
-            drinkCard.append(drinkName);
-            var drinkImg = $("<img>").attr("src", drink.strDrinkThumb);
-            drinkCard.append(drinkImg);
 
-            var ingredientList = [];
-            for (var ingIndex = 1; ingIndex <= 15; ingIndex++) {
-                var ingredientProperty = "strIngredient" + ingIndex;
-                var ingredient = drink[ingredientProperty];
-                var measureProperty = "strMeasure" + ingIndex;
-                var measure = drink[measureProperty];
-
-                if (ingredient != "" && ingredient != null) {   
-                    var item = $("<li>");
-                    var combined = measure + " " + ingredient;
-                    item.text(combined);
-                    drinkCard.append(item);
-                    ingredientList.push(combined);
-                }
-
-            }
-*/
             var instructions = $("<p>");
             var instructionsId = "inst" + drink.idDrink;
             instructions.attr('id', instructionsId);
