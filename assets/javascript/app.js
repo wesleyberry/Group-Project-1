@@ -71,12 +71,8 @@ $(document).ready(function () {
             more.text("More");
             more.data('drink', drink);
 
-
             var modal = document.getElementById('myModal');
             var span = document.getElementsByClassName("close")[0];
-
-
-
 
             more.on("click", function () {
                 var buttonDrink = $(this).data('drink');
@@ -84,8 +80,6 @@ $(document).ready(function () {
                 showModal(buttonDrink, buttonIngredients);
 
             })
-
-
 
             window.onclick = function (event) {
                 if (event.target == modal) {
@@ -154,12 +148,9 @@ $(document).ready(function () {
                 }
 
                 shuffleCards(drinkResults.drinks);
-                
-
             });
         console.log(queryDrinkURL);
     });
-
 
     // organize ingredients into lists
     var userIngredients = [];
@@ -172,11 +163,6 @@ $(document).ready(function () {
         $(newP).text(ingredient);
         var newDivCallout = $("<div class=callout data-closable>");
         newDivCallout.attr("data-closable");
-        var newButton = $("<button data-close>");
-        $(newButton).addClass("close-button");
-        $(newButton).attr("aria-label", "Close alert").attr("type", "button");
-        $(newButton).append("<span aria-hidden='true'>&times;</span>");
-        $(newDivCallout).append(newButton);
         $(newDivCallout).append(newP);
         $("#displayIngredients").append(newDivCallout);
         console.log(userIngredients);
@@ -221,9 +207,12 @@ $(document).ready(function () {
                             makeDrinkCards1(idResults);
                         })
                 }
-
             })
     })
-
-
+    $("#clearButton").on("click", function(event) {
+        event.preventDefault();
+        $("#displayIngredients").empty();
+        userIngredients.length = 0;
+        console.log(userIngredients);
+    });
 })
