@@ -1,8 +1,9 @@
-# Mixology
+# MixologyMust
 
-Mixology is a website/app to help individuals look for their perfect drink based off their favorite ingredients.
+MixologyMust is a website/app that helps individuals look for their perfect drink based off ingredients or the name of a cocktail.
 
-How Mixology works is the user will type into the search bar for drinks or ingredients and provides what kind of beverages contains certain ingredients.
+The user can either type in a drink name or the ingredients to make a drink and the application will return, based off the
+user's criteria, the drink's name, an image of the drink, ingredients required, and instructions on how to make the drink.
 
 
 This app was built with
@@ -10,9 +11,8 @@ HTML
 CSS
 FOUNDATION
 JAVASCRIPT
-FIRE BASE
 JQUERY
-API'S
+APIs
 
 Find the deployed page here:
 https://wesleyberry.github.io/Group-Project-1/
